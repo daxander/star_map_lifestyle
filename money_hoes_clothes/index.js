@@ -28,7 +28,6 @@ http.listen(port, function(){
 });
    
 
-
 var position = [];
 
 function getStars() {
