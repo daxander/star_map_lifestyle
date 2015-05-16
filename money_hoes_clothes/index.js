@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/index', function(req, res){
-  res.status(200).send(position)
+  res.status(200).send(stats)
   res.end()
 });
 
@@ -28,7 +28,7 @@ http.listen(port, function(){
 });
    
 
-var position = [];
+var stats = [];
 
 function getStars() {
 
@@ -44,15 +44,15 @@ function getStars() {
   
     console.log('getting stars');
     for (i=0; i<result.length; i++){
-      name = result[i]['label']
+      var name = result[i]['label']
       var tempx = result[i]['x']
       var tempy = result[i]['y']
       var tempz = result[i]['z']
-      position.push({'x': tempx, 'y': tempy, 'z': tempz});
-      luminosity = result[i]['lum']
-      // console.log('name:' + name + ' x: ' + tempx + ' y:' + tempy + ' z: ' + tempz + ' luminosity: ' + luminosity);
+      var luminosity = result[i]['lum']
+      var color = result[i]['colorb_v']
+      var distance = result[i]['distly']
+      stats.push({'name': name, 'luminosity': luminosity, 'distance': distance, 'color': color, 'x': tempx, 'y': tempy, 'z': tempz})
     }
-    console.log(position.length);
   });
 }
 getStars();
