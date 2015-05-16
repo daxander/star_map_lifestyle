@@ -38,6 +38,15 @@ function sphereMaker(stats) {
       var sphere = new THREE.Mesh( geometry, material );
       sphere.position.set(x, y, z);
       scene.add( sphere );
+
+
+      var geometry2 = new THREE.SphereGeometry( .04, 20, 20 );
+
+
+      var sphere2 = new THREE.Mesh( geometry, material );
+      sphere2.position.set(x, y, z);
+      scene.add( sphere2 );
+
       targetList.push(sphere);
     }
   }
