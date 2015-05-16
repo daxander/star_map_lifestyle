@@ -31,7 +31,7 @@ function sphereMaker(stats) {
 
       var geometry = new THREE.SphereGeometry( .04513, 20, 20 );
       //.00000004513 actual size (think about scaling up the distance to make them larger if there are canvas rendering issues????)
-      var material = new THREE.MeshBasicMaterial( { color: color } );
+      var material = new THREE.MeshBasicMaterial( { color: color, transparent: true, opacity: .5 } );
       THREE.ImageUtils.crossOrigin = '';
       material.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
 
