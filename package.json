@@ -1,0 +1,19 @@
+{
+  "name": "star_map_lifestyle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daxander/star_map_lifestyle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daxander/star_map_lifestyle/issues"
+  },
+  "homepage": "https://github.com/daxander/star_map_lifestyle"
+}
