@@ -1,5 +1,6 @@
 function sphereMaker(stats) {
     //repeat as many times as there are stars in the data
+    console.log('making spheres');
     for(i=0; i<stats.length; i++){
       var x = stats[i]['x'];
       var y = stats[i]['y'];
