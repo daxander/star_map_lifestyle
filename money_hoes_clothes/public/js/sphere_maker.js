@@ -37,6 +37,11 @@ function sphereMaker(stats) {
       material.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
 
       var sphere = new THREE.Mesh( geometry, material );
+      sphere.name = name;
+      sphere.distance = distance;
+      sphere.color_id = color_index;
+      sphere.luminosity = luminosity;
+
       sphere.position.set(x, y, z);
       scene.add( sphere );
 
