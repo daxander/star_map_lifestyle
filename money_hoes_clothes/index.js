@@ -45,13 +45,13 @@ function getStars() {
     console.log('getting stars');
     for (i=0; i<result.length; i++){
       var name = result[i]['label']
-      var tempx = result[i]['x']
-      var tempy = result[i]['y']
-      var tempz = result[i]['z']
+      var x = result[i]['x']
+      var y = result[i]['y']
+      var z = result[i]['z']
       var luminosity = result[i]['lum']
       var color = result[i]['colorb_v']
       var distance = result[i]['distly']
-      stats.push({'name': name, 'luminosity': luminosity, 'distance': distance, 'color': color, 'x': tempx, 'y': tempy, 'z': tempz})
+      stats.push({'name': name, 'luminosity': luminosity, 'distance': distance, 'color': color, 'x': x, 'y': y, 'z': z})
     }
   });
 }

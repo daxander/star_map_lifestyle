@@ -106,6 +106,7 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		  if ( intersects.length > 0 ){
 		    ///do something here on click (right now changes colour)
 		    intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
+		    // $(#output).text = 'clicked';
 		  }
 
 		}
