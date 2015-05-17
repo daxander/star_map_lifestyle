@@ -25,14 +25,13 @@
     $(function() {
 
       projector = new THREE.Projector();
-      // container, controls;
       projector, mouse = { x: 0, y: 0 };
       camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 1000 );
-     
+           // camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.2, 20 );
+
       targetList = [];
       clock = new THREE.Clock();
       scene = new THREE.Scene();
-      // camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.2, 20 );
       renderer = new THREE.WebGLRenderer();
       renderer.setSize( window.innerWidth, window.innerHeight );
       renderer.setSize( window.innerWidth, window.innerHeight );
@@ -70,17 +69,10 @@
       camControls.lat = 120;
 
 
-
-
-  function onDocumentMouseDown( event ){
-    event.preventDefault();
-    console.log("Click.");
-    clickEvent();
-  }
-
       ajax(); 
       render();
     });
+
   </script> 
 </body>
 </html>
