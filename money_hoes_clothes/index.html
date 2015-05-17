@@ -19,8 +19,7 @@
     }
   </style>
   <script src="/public/three.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="/public/js/variables.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>  
   <script src="/public/js/FirstPersonControls.js"></script>
   <script src="/public/js/sphere_maker.js"></script>
   <script src="/public/js/render.js"></script>
@@ -68,6 +67,7 @@
       //   flyControls.autoForward = true;
       //   flyControls.dragToLook = false;
       // // end controls
+
       camControls = new THREE.FirstPersonControls(camera);
       camControls.lookSpeed = 0.05;
       camControls.movementSpeed = 1;
@@ -80,6 +80,17 @@
       camControls.verticalMax = 2.0;
       camControls.lon = -150;
       camControls.lat = 120;
+
+      var geometry = new THREE.RingGeometry( .5, 36, 25 );
+      var mat = new THREE.MeshBasicMaterial( { wireframe: true, opacity: 0.5 } );
+      var plane = new THREE.Mesh( geometry, mat );
+      scene.add( plane );
+
+  function onDocumentMouseDown( event ){
+    event.preventDefault();
+    console.log("Click.");
+    clickEvent();
+  }
 
 
       ajax(); 
