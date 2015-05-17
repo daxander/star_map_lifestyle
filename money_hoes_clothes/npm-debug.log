@@ -1,0 +1,92 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/vagrant/.nvm/v0.10.32/bin/node',
+1 verbose cli   '/home/vagrant/.nvm/v0.10.32/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'threex.spaceships' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 warn package.json learn_express@1.0.0 No description
+5 warn package.json learn_express@1.0.0 No repository field.
+6 warn package.json learn_express@1.0.0 No README data
+7 warn package.json http@0.0.0 http is also the name of a node core module.
+8 warn package.json http@0.0.0 No description
+9 warn package.json http@0.0.0 No repository field.
+10 verbose readDependencies using package.json deps
+11 verbose cache add [ 'threex.spaceships', null ]
+12 verbose cache add name=undefined spec="threex.spaceships" args=["threex.spaceships",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'threex.spaceships',
+13 verbose parsed url   path: 'threex.spaceships',
+13 verbose parsed url   href: 'threex.spaceships' }
+14 silly lockFile 2e947bde-threex-spaceships threex.spaceships
+15 verbose lock threex.spaceships /home/vagrant/.npm/2e947bde-threex-spaceships.lock
+16 silly lockFile 2e947bde-threex-spaceships threex.spaceships
+17 silly lockFile 2e947bde-threex-spaceships threex.spaceships
+18 verbose addNamed [ 'threex.spaceships', '' ]
+19 verbose addNamed [ null, '*' ]
+20 silly lockFile 903e3d48-threex-spaceships threex.spaceships@
+21 verbose lock threex.spaceships@ /home/vagrant/.npm/903e3d48-threex-spaceships.lock
+22 silly addNameRange { name: 'threex.spaceships', range: '*', hasData: false }
+23 verbose request where is /threex.spaceships
+24 verbose request registry https://registry.npmjs.org/
+25 verbose request id abcf48c5da8eff52
+26 verbose url raw /threex.spaceships
+27 verbose url resolving [ 'https://registry.npmjs.org/', './threex.spaceships' ]
+28 verbose url resolved https://registry.npmjs.org/threex.spaceships
+29 verbose request where is https://registry.npmjs.org/threex.spaceships
+30 info trying registry request attempt 1 at 21:34:36
+31 http GET https://registry.npmjs.org/threex.spaceships
+32 http 404 https://registry.npmjs.org/threex.spaceships
+33 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+33 verbose headers   'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=0',
+33 verbose headers   'content-length': '51',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Sun, 17 May 2015 21:34:36 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   age: '0',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-sjc3132-SJC',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1431898476.546507,VS0,VE154' }
+34 silly registry.get cb [ 404,
+34 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+34 silly registry.get     'content-type': 'application/json',
+34 silly registry.get     'cache-control': 'max-age=0',
+34 silly registry.get     'content-length': '51',
+34 silly registry.get     'accept-ranges': 'bytes',
+34 silly registry.get     date: 'Sun, 17 May 2015 21:34:36 GMT',
+34 silly registry.get     via: '1.1 varnish',
+34 silly registry.get     age: '0',
+34 silly registry.get     connection: 'keep-alive',
+34 silly registry.get     'x-served-by': 'cache-sjc3132-SJC',
+34 silly registry.get     'x-cache': 'MISS',
+34 silly registry.get     'x-cache-hits': '0',
+34 silly registry.get     'x-timer': 'S1431898476.546507,VS0,VE154' } ]
+35 silly lockFile 903e3d48-threex-spaceships threex.spaceships@
+36 silly lockFile 903e3d48-threex-spaceships threex.spaceships@
+37 error 404 404 Not Found: threex.spaceships
+37 error 404
+37 error 404 'threex.spaceships' is not in the npm registry.
+37 error 404 You should bug the author to publish it
+37 error 404 It was specified as a dependency of 'learn_express'
+37 error 404
+37 error 404 Note that you can also install from a
+37 error 404 tarball, folder, or http url, or git url.
+38 error System Linux 3.2.0-65-generic-pae
+39 error command "/home/vagrant/.nvm/v0.10.32/bin/node" "/home/vagrant/.nvm/v0.10.32/bin/npm" "install" "--save" "threex.spaceships"
+40 error cwd /vagrant/finalProject/star_map_lifestyle/money_hoes_clothes
+41 error node -v v0.10.32
+42 error npm -v 1.4.28
+43 error code E404
+44 verbose exit [ 1, true ]
