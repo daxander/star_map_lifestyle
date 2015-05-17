@@ -105,9 +105,12 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
 		  if ( intersects.length > 0 ){
 		    ///do something here on click (right now changes colour)
+		    console.log(intersects[0].object.name);
+		    console.log(intersects[0].object.position);
+		    console.log(intersects[0].object.distance)
 		    intersects[0].object.material.color.setHex( Math.random() * 0xffffff );
-		    console.log(intersects[0].object.name)
-		    $('#message').innerHTML = intersects[0].object.position.y;
+		    console.log('click');
+		    // $('#message').innerHTML = intersects[0].object.position.y;
 		  }
 
 		}
