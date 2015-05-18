@@ -107,7 +107,9 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		    ///do something here on click 
 		    console.log('click');
 		    $('#message').text("Name: " + intersects[0].object.name);
-		   	$('#content').text("distance from sun in light-years: " + intersects[0].object.distance + "luminosity: " + intersects[0].object.luminosity + "BV color value: " + intersects[0].object.color_index);
+		   	$('#content').text("Lightyears from the Sun " + intersects[0].object.distance);
+		   	$('#luminosity').text("Luminosity: " + intersects[0].object.luminosity);
+		   	$('#BV').text("BV Color value: " + intersects[0].object.color_index);
 		  }
 		}
 	};
