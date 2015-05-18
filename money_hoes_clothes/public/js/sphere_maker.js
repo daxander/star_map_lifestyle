@@ -39,7 +39,7 @@ function sphereMaker(stats) {
       var sphere = new THREE.Mesh( geometry, material );
       sphere.name = name;
       sphere.distance = distance;
-      sphere.color_id = color_index;
+      sphere.color_index = color_index;
       sphere.luminosity = luminosity;
 
       sphere.position.set(x, y, z);
