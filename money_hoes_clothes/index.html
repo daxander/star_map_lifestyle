@@ -25,6 +25,7 @@
   <script src="/public/js/render.js"></script>
   <script src="/public/js/ajax.js"></script>
   <script src="/public/js/threex.spaceships.js"></script>
+  <script src="/public/js/axisBuilder.js"></script>
 
 </head>
 <body>
@@ -87,11 +88,42 @@
       // var plane = new THREE.Mesh( geometry, mat );
       // scene.add( plane );
 
-  function onDocumentMouseDown( event ){
-    event.preventDefault();
-    console.log("Click.");
-    clickEvent();
-  }
+      // THREEx.SpaceShips.loadShuttle02(function(object3d){
+      //   scene.add(object3d)
+      // })
+
+    // var loader = new THREE.JSONLoader(); // init the loader util
+
+    // // init loading
+    // loader.load('public/js/space-shuttle-orbiter.json', function (geo) {
+    // // create a new material
+    // var mat = new THREE.MeshLambertMaterial({
+    //   // map: THREE.ImageUtils.loadTexture('path_to_texture'),  // specify and load the texture
+    //   colorAmbient: [0.480000026226044, 0.480000026226044, 0.480000026226044],
+    //   colorDiffuse: [0.480000026226044, 0.480000026226044, 0.480000026226044],
+    //   colorSpecular: [0.8999999761581421, 0.8999999761581421, 0.8999999761581421]
+    // });
+    
+    // // create a mesh with models geometry and material
+    // var spaceship = new THREE.Mesh(
+    //   geo,
+    //   mat
+    //   );
+  
+    //   //mesh.rotation.y = -Math.PI/5;
+      
+    //   scene.add(spaceship);
+    // });
+  
+  axes = buildAxes( 1000 );
+  scene.add( axes );
+
+
+      function onDocumentMouseDown( event ){
+        event.preventDefault();
+        console.log("Click.");
+        clickEvent();
+      }
 
 
       ajax(); 
