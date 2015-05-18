@@ -30,7 +30,7 @@ function sphereMaker(stats) {
         color = 0xFF5C33
       };
 
-      var geometry = new THREE.SphereGeometry( .04513, 20, 20 );
+      var geometry = new THREE.SphereGeometry( .01513, 20, 20 );
       //.00000004513 actual size (think about scaling up the distance to make them larger if there are canvas rendering issues????)
       var material = new THREE.MeshBasicMaterial( { color: color, transparent: true, opacity: .5 } );
       THREE.ImageUtils.crossOrigin = '';

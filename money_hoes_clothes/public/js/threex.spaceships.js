@@ -41,7 +41,7 @@ THREEx.SpaceShips.loadSpaceFighter02	= function(onLoad){
 }
 
 THREEx.SpaceShips.loadSpaceFighter03	= function(onLoad){
-	var loader	= new THREE.OBJMTLLoader();
+	var loader	= new THREE.OBJLoader();
 	var baseUrl	= THREEx.SpaceShips.baseUrl 
 	var objUrl	= baseUrl + 'models/SpaceFighter03/SpaceFighter03.obj';
 	var mtlUrl	= baseUrl + 'models/SpaceFighter03/SpaceFighter03.mtl';
