@@ -33,9 +33,9 @@
   </style>
   <script src="/public/three.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="/public/js/variables.js"></script>
   <script src="/public/js/FirstPersonControls.js"></script>
   <script src="/public/js/sphere_maker.js"></script>
+  <script src="/public/js/constellations.js"></script>
   <script src="/public/js/render.js"></script>
   <script src="/public/js/ajax.js"></script>
 
@@ -60,6 +60,8 @@
       
     $(function() {
 
+      var constellations = [];
+
       projector = new THREE.Projector();
       projector, mouse = { x: 0, y: 0 };
       camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -82,7 +84,7 @@
       camera.position.z = 1;
       camera.lookAt(new THREE.Vector3(0, 0, 0));
 
-      camera.setLens(50)
+      camera.setLens(50);
       //   // fly controls
       //   var flyControls = new THREE.FlyControls(camera);
       //   flyControls.movementSpeed = 25;
@@ -93,7 +95,7 @@
       // // end controls
       camControls = new THREE.FirstPersonControls(camera);
       camControls.lookSpeed = 0.05;
-      camControls.movementSpeed = 1;
+      camControls.movementSpeed = 2;
       camControls.noFly = true;
       camControls.noZoom = true;
       camControls.autoForward = false;
@@ -105,8 +107,13 @@
       camControls.lat = 120;
 
 
+
+
       ajax(); 
+      getConstellations();
+
       render();
+
     });
 
   </script> 
