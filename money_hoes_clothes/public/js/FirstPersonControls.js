@@ -104,17 +104,14 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		  var intersects = ray.intersectObjects( targetList );
 
 		  if ( intersects.length > 0 ){
-		    ///do something here on click (right now changes colour)
-		    console.log(intersects[0].object.name);
-		    console.log(intersects[0].object.position);
-		    console.log(intersects[0].object.distance)
-		    intersects[0].object.material.color.setHex( Math.random() * 0xffffff );
+		    ///do something here on click 
 		    console.log('click');
-		    // $('#message').innerHTML = intersects[0].object.position.y;
+		    $('#message').text("Name: " + intersects[0].object.name);
+		   	$('#content').text("Lightyears from the Sun: " + intersects[0].object.distance);
+		   	$('#luminosity').text("Luminosity: " + intersects[0].object.luminosity);
+		   	$('#BV').text("BV Color value: " + intersects[0].object.color_index);
 		  }
-
 		}
-
 	};
 
 	this.onMouseUp = function ( event ) {
