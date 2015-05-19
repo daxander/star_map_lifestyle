@@ -57,10 +57,11 @@ function getStars() {
       var x = result[i]['x']
       var y = result[i]['y']
       var z = result[i]['z']
-      var luminosity = result[i]['lum']
+      var luminosity = result[i]['luminosity']
       var color = result[i]['colorb_v']
-      var distance = result[i]['distly']
-      stats.push({'id': id, 'name': name, "luminosity": luminosity, 'distance': distance, 'color': color, 'x': x, 'y': y, 'z': z})
+      var distance = result[i]['distance_light_years']
+      stats.push({'id': id, 'name': name, 'luminosity': luminosity, 'distance': distance, 'color': color, 'x': x, 'y': y, 'z': z})
+
     }
   });
 }

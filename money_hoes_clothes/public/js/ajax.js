@@ -22,8 +22,7 @@ function getConstellations(){
     type: 'json',
     success: function(data) {
       console.log('got constellations');
-      console.log(window.constellations);
-      window.constellations(data);
+      constellations(data);
     }
   });
 }

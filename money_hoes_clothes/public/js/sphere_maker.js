@@ -1,11 +1,5 @@
 function sphereMaker(stats) {
   //repeat as many times as there are stars in the data
-  // THREE.GeometryUtils.merge(geometry, otherGeometry);
-  // var mesh = new THREE.Mesh(new THREE.CubeGeometry(10,10,10), new THREE.MeshNormalMaterial());
-  // mesh.position.x = 30;
-  // mesh.rotation.y = Math.PI/3;
-  // THREE.GeometryUtils.merge(geometry, mesh);
-
   var geometry = new THREE.SphereGeometry( .04513, 20, 20 );
   console.log('making spheres');
   for(i=0; i<stats.length; i++){
@@ -41,7 +35,7 @@ function sphereMaker(stats) {
 
     
     //.00000004513 actual size (think about scaling up the distance to make them larger if there are canvas rendering issues????)
-    var material = new THREE.MeshBasicMaterial( { color: color, transparent: true, opacity: .5 } );
+    var material = new THREE.MeshBasicMaterial( { color: color} );
     // THREE.ImageUtils.crossOrigin = '';
     // material.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
 

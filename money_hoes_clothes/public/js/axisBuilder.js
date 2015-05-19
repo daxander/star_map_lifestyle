@@ -32,3 +32,17 @@ function buildAxes( length ) {
 
   return axes;
 }
+
+var axesOn = false;
+var axes = buildAxes( 4000 );
+
+function toggleAxis() {               
+  if (axesOn == true) {
+    scene.remove(axes);
+    axesOn = false;
+  } else {
+    scene.add( axes );
+    axesOn = true;
+  }
+}
+

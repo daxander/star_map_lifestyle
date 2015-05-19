@@ -1,4 +1,4 @@
-window.constellations = function(data){
+constellations = function(data){
   for ( x=0; x < data.constellations.length; x++) {
     for( i=0; i < data.constellations[x].length -1; i++){
       var posx = data.constellations[x][i][0];
@@ -23,7 +23,7 @@ function buildConst( src, dst, colorHex ) {
  mat = new THREE.LineBasicMaterial({ linewidth: 4, color: colorHex });
  geom.vertices.push( src.clone() );
  geom.vertices.push( dst.clone() );
- geom.computeLineDistances(); // This one is SUPER important, otherwise dashed lines will appear as simple plain lines
+ // geom.computeLineDistances(); // This one is SUPER important, otherwise dashed lines will appear as simple plain lines
 
  var axis = new THREE.Line( geom, mat, THREE.LinePieces );
 
