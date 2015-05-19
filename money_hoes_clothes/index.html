@@ -73,7 +73,7 @@
       <p id="luminosity"></p>
       <p id="BV"></p>
     </div>
-    <button id="axisBtn">Axis Off</button>
+    <button id="axisBtn">Axis On/Off</button>
 
 
 
@@ -107,7 +107,7 @@
       camera.setLens(50);
       camControls = new THREE.FirstPersonControls(camera);
       camControls.lookSpeed = 0.05;
-      camControls.movementSpeed = 16;
+      camControls.movementSpeed = 5;
       camControls.noFly = true;
       camControls.noZoom = true;
       camControls.autoForward = false;
@@ -118,17 +118,20 @@
       camControls.lon = -150;
       camControls.lat = 120;
 
-      function toggleAxis() {        
-        var axesOn;
+      var axesOn = false;
+      var axes = buildAxes( 4000 );
+
+      function toggleAxis() {               
         if (axesOn == true) {
-          console.log('axes!');
           scene.remove(axes);
+          axesOn = false;
         } else {
-          var axes = buildAxes( 4000 );
-          var addAxes = scene.add( axes );
-          axesOn = true
+          scene.add( axes );
+          axesOn = true;
         }
       }
+
+
 
       function onDocumentMouseDown( event ){
         event.preventDefault();

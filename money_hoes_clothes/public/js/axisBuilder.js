@@ -3,9 +3,9 @@ function buildAxis( src, dst, colorHex, dashed ) {
   var geom = new THREE.Geometry(), mat; 
 
   if(dashed) {
-    mat = new THREE.LineDashedMaterial({ linewidth: 3, color: colorHex, dashSize: 3, gapSize: 3 });
+    mat = new THREE.LineDashedMaterial({ linewidth: 1, color: colorHex, dashSize: 3, gapSize: 3 });
   } else {
-    mat = new THREE.LineBasicMaterial({ linewidth: 3, color: colorHex });
+    mat = new THREE.LineBasicMaterial({ linewidth: 1, color: colorHex });
   }
 
   geom.vertices.push( src.clone() );
