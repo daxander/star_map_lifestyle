@@ -36,7 +36,9 @@ function buildAxes( length ) {
 var axesOn = false;
 var axes = buildAxes( 4000 );
 
-function toggleAxis() {               
+function toggleAxis() { 
+console.log('x clicked');  
+
   if (axesOn == true) {
     scene.remove(axes);
     axesOn = false;
@@ -45,4 +47,5 @@ function toggleAxis() {
     axesOn = true;
   }
 }
+
 
