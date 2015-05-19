@@ -179,7 +179,9 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
 			case 81: /*Q*/ this.freeze = !this.freeze; break;
 			case 88: /*X*/ toggleAxis(); break;
+			
 			case 72: /*H*/ goHome(); break;
+			case 67: /*C*/ toggleConstellations(); break;
 
 		}
 
