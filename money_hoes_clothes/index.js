@@ -60,7 +60,7 @@ function getStars() {
       var luminosity = result[i]['lum']
       var color = result[i]['colorb_v']
       var distance = result[i]['distly']
-      stats.push({'id': id, 'name': name, 'luminosity': luminosity, 'distance': distance, 'color': color, 'x': x, 'y': y, 'z': z})
+      stats.push({'id': id, 'name': name, "luminosity": luminosity, 'distance': distance, 'color': color, 'x': x, 'y': y, 'z': z})
     }
   });
 }

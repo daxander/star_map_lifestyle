@@ -23,12 +23,12 @@ function buildAxis( src, dst, colorHex, dashed ) {
 function buildAxes( length ) {
   var axes = new THREE.Object3D();
 
-  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0), new THREE.Vector3(  length, 0, 0 ), 0x0000FF, false ) ); // +X
-  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( -length, 0, 0 ), 0x0000FF, false) ); // -X
-  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, length, 0 ), 0x0000FF, false ) ); // +Y
-  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, -length, 0 ), 0x0000FF, false ) ); // -Y
-  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, length ), 0x0000FF, false ) ); // +Z
-  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, -length ), 0x0000FF, false ) ); // -Z
+  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0), new THREE.Vector3(  length, 0, 0 ), 0xFF0000, false ) ); // +X
+  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( -length, 0, 0 ), 0xFF0000, false) ); // -X
+  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, length, 0 ), 0xFF0000, false ) ); // +Y
+  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, -length, 0 ), 0xFF0000, false ) ); // -Y
+  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, length ), 0xFF0000, false ) ); // +Z
+  axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, -length ), 0xFF0000, false ) ); // -Z
 
   return axes;
 }
