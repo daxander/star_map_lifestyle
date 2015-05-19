@@ -60,7 +60,7 @@
       
     $(function() {
 
-      var constellations = [];
+      // var constellations = [];
 
       projector = new THREE.Projector();
       projector, mouse = { x: 0, y: 0 };
@@ -85,14 +85,6 @@
       camera.lookAt(new THREE.Vector3(0, 0, 0));
 
       camera.setLens(50);
-      //   // fly controls
-      //   var flyControls = new THREE.FlyControls(camera);
-      //   flyControls.movementSpeed = 25;
-      //   flyControls.domElement = document.querySelector("#WebGL-output");
-      //   flyControls.rollSpeed = Math.PI / 24;
-      //   flyControls.autoForward = true;
-      //   flyControls.dragToLook = false;
-      // // end controls
       camControls = new THREE.FirstPersonControls(camera);
       camControls.lookSpeed = 0.05;
       camControls.movementSpeed = 2;

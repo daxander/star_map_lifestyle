@@ -11,15 +11,19 @@ function ajax(){
   });
 }
 
+
+
 function getConstellations(){
   console.log("Sending request to server...")
+  console.log(window.constellations);
   $.ajax({
     url: 'http://localhost:3000/constellations',
     method: 'GET',
     type: 'json',
     success: function(data) {
       console.log('got constellations');
-      constellations(data);
+      console.log(window.constellations);
+      window.constellations(data);
     }
   });
 }
