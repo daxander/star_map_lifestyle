@@ -93,21 +93,21 @@
 
       camControls = new THREE.FirstPersonControls(camera);
       camControls.lookSpeed = 0.05;
-      camControls.movementSpeed = 2;
+      camControls.movementSpeed = 5;
       camControls.noFly = true;
       camControls.noZoom = true;
       camControls.autoForward = false;
       camControls.lookVertical = true;
-      camControls.constrainVertical = true;
+      camControls.constrainVertical = false;
       camControls.verticalMin = 1.0;
       camControls.verticalMax = 2.0;
       camControls.lon = -150;
       camControls.lat = 120;
 
-      var geometry = new THREE.RingGeometry( .5, 36, 25 );
-      var mat = new THREE.MeshBasicMaterial( { wireframe: true, opacity: 0.5 } );
-      var plane = new THREE.Mesh( geometry, mat );
-      scene.add( plane );
+      // var geometry = new THREE.RingGeometry( .5, 36, 25 );
+      // var mat = new THREE.MeshBasicMaterial( { wireframe: true, opacity: 0.5 } );
+      // var plane = new THREE.Mesh( geometry, mat );
+      // scene.add( plane );
 
   function onDocumentMouseDown( event ){
     event.preventDefault();

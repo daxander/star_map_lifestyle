@@ -1,4 +1,4 @@
-window.constellations = function(data){
+wconstellations = function(data){
   for ( x=0; x < data.constellations.length; x++) {
     for( i=0; i < data.constellations[x].length -1; i++){
       var posx = data.constellations[x][i][0];

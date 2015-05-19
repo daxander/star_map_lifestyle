@@ -40,7 +40,7 @@ function sphereMaker(stats) {
 
     
     //.00000004513 actual size (think about scaling up the distance to make them larger if there are canvas rendering issues????)
-    var material = new THREE.MeshBasicMaterial( { color: color, transparent: true, opacity: .5 } );
+    var material = new THREE.MeshBasicMaterial( { color: color, transparent: true, opacity: 1 } );
     // THREE.ImageUtils.crossOrigin = '';
     // material.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
 
