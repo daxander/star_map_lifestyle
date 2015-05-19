@@ -75,9 +75,10 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 	};
 
 	this.onMouseDown = function ( event ) {
+		console.log("Click.");
 
 		if ( this.domElement !== document ) {
-
+			console.log("focus");
 			this.domElement.focus();
 
 		}
@@ -86,6 +87,7 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		event.stopPropagation();
 
 		if ( this.activeLook ) {
+			console.log("event");
 
 		  mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
 		  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
@@ -105,7 +107,7 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
 		  if ( intersects.length > 0 ){
 		    ///do something here on click 
-		    console.log('click');
+		    console.log('target found');
 		    $('#message').text("Name: " + intersects[0].object.name);
 		   	$('#content').text("Lightyears from the Sun: " + intersects[0].object.distance);
 		   	$('#luminosity').text("Luminosity: " + intersects[0].object.luminosity);
