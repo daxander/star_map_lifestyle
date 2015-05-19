@@ -9,7 +9,6 @@ function sphereMaker(stats) {
     var name = stats[i]['name'];
     var distance = stats[i]['distance'];
     var luminosity = stats[i]['luminosity'];
-    // console.log(luminosity);
     var color_index = stats[i]['color'];
     var id = stats[i]['id'];
     var color;
