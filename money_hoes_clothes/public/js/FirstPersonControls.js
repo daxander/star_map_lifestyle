@@ -174,6 +174,7 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 			case 70: /*F*/ this.moveDown = true; break;
 
 			case 81: /*Q*/ this.freeze = !this.freeze; break;
+			case 88: /*X*/ toggleAxis();
 
 		}
 
