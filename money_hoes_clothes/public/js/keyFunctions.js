@@ -9,12 +9,12 @@ function toggleConstellations() {
   console.log('c clicked');
   if (constellationsOn == true) {
     for (i=0; i<totalLines.length; i++) {
-      scene.remove(line);
+      scene.remove(totalLines[i]);
     }
     constellationsOn = false;
   } else {
     for (i=0; i<totalLines.length; i++) {
-      scene.add(line);
+      scene.add(totalLines[i]);
     }
     constellationsOn = true;
   }
