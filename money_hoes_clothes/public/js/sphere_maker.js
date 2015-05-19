@@ -44,11 +44,9 @@ function sphereMaker(stats) {
     sphere.color_index = color_index;
     sphere.luminosity = luminosity;
     sphere.id = id;
-
     sphere.position.set(x, y, z);
+    targetList.push(sphere);
     scene.add( sphere );
 
-
-    targetList.push(sphere);
   }
 }
