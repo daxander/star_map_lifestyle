@@ -183,6 +183,10 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 			case 72: /*H*/ goHome(); break;
 			case 67: /*C*/ toggleConstellations(); break;
 
+			case 49: /*1*/ speed(3); break;
+			case 50: /*2*/ speed(8); break;
+			case 51: /*3*/ speed(20); break;
+
 		}
 
 	};

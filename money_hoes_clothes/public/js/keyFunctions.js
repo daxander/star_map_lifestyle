@@ -19,3 +19,8 @@ function toggleConstellations() {
     constellationsOn = true;
   }
 }
+
+function speed(number){
+  camControls.movementSpeed = number;
+
+}
