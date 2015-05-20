@@ -116,6 +116,11 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		   	$('#content').text("Lightyears from the Sun: " + intersects[0].object.distance);
 		   	$('#luminosity').text("Luminosity: " + intersects[0].object.luminosity);
 		   	$('#BV').text("BV Color value: " + intersects[0].object.color_index);
+		   	if(intersects[0].object.constellation != undefined){
+		   		$('#constellation').text("Constellation: " + nameConstellation(intersects[0].object.constellation));
+		   	}else {
+					$('#constellation').text("");
+		   	}
 		  }
 		}
 	};

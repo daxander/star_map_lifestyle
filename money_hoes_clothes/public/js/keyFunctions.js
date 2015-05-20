@@ -22,7 +22,6 @@ function toggleConstellations() {
 
 function speed(number){
   camControls.movementSpeed = number;
-
 }
 
 function findLocation() {
@@ -31,5 +30,16 @@ function findLocation() {
   locationDiv.innerHTML = '<h2>Current distance from sun is:</h2>' + location + ' <p><strong>light years</strong></p>';
   document.getElementById('distance2').innerHTML = '';
   document.getElementById('distance2').appendChild(locationDiv);
+}
+
+function nameConstellation(id){
+
+  switch ( parseInt(id)) {
+
+    case 133: return "Ursa Major (Big Dipper)"; break;
+    case 138: return "Ursa Minor (Little Dipper)"; break;
+    case 30: return "Cassiopia"; break;
+    default: return "unmapped constellation"; break;
+  }
 }
 
