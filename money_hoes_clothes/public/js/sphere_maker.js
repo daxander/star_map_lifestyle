@@ -1,7 +1,16 @@
 function sphereMaker(stats) {
-  //repeat as many times as there are stars in the data
-  var geometry = new THREE.SphereGeometry( .04513, 20, 20 );
+ 
+  
+  var geometry = new THREE.SphereGeometry( .03265, 20, 20 );
+   //.00000004513 actual size
   console.log('making spheres');
+  var materialBlue = new THREE.MeshBasicMaterial({color:0x6CE1FF});
+  var materialBlueWhite = new THREE.MeshBasicMaterial({color:0xC4F3FF});
+  var materialWhite = new THREE.MeshBasicMaterial({color:0xFFFFFF});
+  var materialYellow = new THREE.MeshBasicMaterial({color:0xFFFF85});
+  var materialOrange = new THREE.MeshBasicMaterial({color:0xFFBC59});
+  var materialRed = new THREE.MeshBasicMaterial({color:0xFF5C33});
+   //repeat as many times as there are stars in the data
   for(i=0; i<stats.length; i++){
     var x = stats[i]['x'];
     var y = stats[i]['y'];
@@ -13,37 +22,27 @@ function sphereMaker(stats) {
     var id = stats[i]['id'];
     var color;
     if(color_index <= -0.2988){
-      //blue
-      color = 0x6CE1FF
+      material = materialBlue;
     }else if(color_index <= -0.0670){
-      //blue white
-      color = 0xC4F3FF
+      material = materialBlueWhite;
     }else if(color_index <= 0.3857){
-      //white
-    color = 0xFFFFFF
+      material = materialWhite;
     }else if(color_index <= 0.8612){
-      //yellow
-      color = 0xFFFF85
+      material = materialYellow; 
     }else if(color_index <= 1.4057){
-      //orange
-      color = 0xFFBC59
+      material = materialOrange;
     }else if(color_index > 1.4057 ){
-      //red
-      color = 0xFF5C33
+      material = materialRed;
     };
 
-
-    //.00000004513 actual size (think about scaling up the distance to make them larger if there are canvas rendering issues????)
-    var material = new THREE.MeshBasicMaterial( { color: color} );
-    // THREE.ImageUtils.crossOrigin = '';
-    // material.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
-
+    
+   
     var sphere = new THREE.Mesh( geometry, material );
+    
 
     if(stats[i]['constId']){
       sphere.constellation = stats[i]['constId'];
     }
-
 
     sphere.name = name;
     sphere.distance = distance;
@@ -53,6 +52,5 @@ function sphereMaker(stats) {
     sphere.position.set(x, y, z);
     targetList.push(sphere);
     scene.add( sphere );
-
   }
 }
