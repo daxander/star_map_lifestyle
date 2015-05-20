@@ -196,7 +196,7 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		switch( event.keyCode ) {
 
 			case 38: /*up*/
-			case 87: /*W*/ this.moveForward = false; console.log(findLocation()); break;
+			case 87: /*W*/ this.moveForward = false; findLocation(); break;
 
 			case 37: /*left*/
 			case 65: /*A*/ this.moveLeft = false; break;
