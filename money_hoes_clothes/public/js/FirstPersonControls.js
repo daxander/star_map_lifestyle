@@ -192,7 +192,11 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		switch( event.keyCode ) {
 
 			case 38: /*up*/
-			case 87: /*W*/ this.moveForward = false; break;
+			case 87: /*W*/ this.moveForward = false; 
+			function findLocation() {
+				var location = Math.sqrt((x^2)+(y^2)+(x^2)) * 0.307;
+			}
+			break;
 
 			case 37: /*left*/
 			case 65: /*A*/ this.moveLeft = false; break;

@@ -19,7 +19,6 @@ constellations = function(data){
   }
 };
 
-
 function buildConst( src, dst, colorHex ) {
  var geom = new THREE.Geometry(), mat;
  mat = new THREE.LineBasicMaterial({ linewidth: 4, color: colorHex });
