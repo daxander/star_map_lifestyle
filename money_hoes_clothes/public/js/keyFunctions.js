@@ -35,10 +35,14 @@ function findLocation() {
 function nameConstellation(id){
 
   switch ( parseInt(id)) {
-
+    case 30: return "Cassiopia"; break;
+    case 95: return "Orion (body)"; break;
+    case 96: return "Orion (belt)"; break;
+    case 97: return "Orion (arm)"; break;
+    case 98: return "Orion (shield)"; break;
     case 133: return "Ursa Major (Big Dipper)"; break;
     case 138: return "Ursa Minor (Little Dipper)"; break;
-    case 30: return "Cassiopia"; break;
+    
     default: return "unmapped constellation"; break;
   }
 }
