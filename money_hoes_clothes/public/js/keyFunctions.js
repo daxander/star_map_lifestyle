@@ -38,6 +38,7 @@ function nameConstellation(id){
     case 30: return "Cassiopia"; break;
     case 47: return "Crux (Southern Cross)"; break;
     case 48: return "Crux (Southern Cross)"; break;
+
     case 95: return "Orion (body)"; break;
     case 96: return "Orion (belt)"; break;
     case 97: return "Orion (arm)"; break;
