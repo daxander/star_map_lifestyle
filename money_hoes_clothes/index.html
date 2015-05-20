@@ -29,8 +29,29 @@
           border-left: 2px solid #54BED8; 
           border-top: 2px solid #54BED8;     
       }
+
+      
+    #control {
+          font-family: 'Orbitron', sans-serif;
+          opacity: 0.9;
+          position: absolute;
+          right: 0px;
+          top: 0px;
+          margin-right: 10px;
+          margin-top: 10px;
+          padding-right: 10px;
+          padding-top: 10px;
+          width: 300px;
+          height: 200px;
+          color: #54BED8;
+          border-right: 2px solid #54BED8; 
+          border-top: 2px solid #54BED8;  
+          letter-spacing: 2px;
+      }
+
     
   </style>
+  <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500,700,900' rel='stylesheet' type='text/css'>
   <script src="/public/three.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="/public/js/axes_builder.js"></script>
@@ -43,21 +64,27 @@
   <script src="/public/js/axisBuilder.js"></script>
   <script src="/public/js/keyFunctions.js"></script>
 
-<link href='http://fonts.googleapis.com/css?family=Orbitron:400,500,700,900' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 
     <div id="Stats-output"></div>
-
     <div id="output">
       <h2 id="message">StarMap Lifestyle by:<br> Erica Wright<br> Peter Thicke<br> Davey Feimer<br> Nico Flojo</h2>
       <p id="content"></p>
       <p id="luminosity"></p>
       <p id="BV"></p>
     </div>
-
-
-
+  
+    <div id="control">
+      <h2>Control Panel</h2>
+      <p>Movement - <strong>WASD</strong></p>
+      <p>Toggle Speed - <strong>123</strong></p>
+      <p>Toggle Axis - <strong>X</strong></p>
+      <p>Toggle Constellations - <strong>C</strong></p>
+      <p>Elevate / Descend - <strong>R/F</strong></p>
+      <p>Return to Sun - <strong>H</strong></p>
+    </div>
 
   <script>
 
