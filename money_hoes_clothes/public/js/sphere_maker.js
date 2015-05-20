@@ -35,11 +35,8 @@ function sphereMaker(stats) {
       material = materialRed;
     };
 
-    
-   
     var sphere = new THREE.Mesh( geometry, material );
     
-
     if(stats[i]['constId']){
       sphere.constellation = stats[i]['constId'];
     }
