@@ -87,9 +87,8 @@
     }
 
     #overlay div {
-      width: 400px;
+      width: 500px;
       margin: 300px auto;
-      background-color: #000;
       padding: 20px;
       text-align: center;
       font-family: 'Orbitron', sans-serif;
@@ -104,17 +103,13 @@
 
     #start-button {
       font-family: 'Orbitron', sans-serif;
-      background-color: #E60000;
       margin: 2px; 
-      font-size: .7em;
-      border-radius: 50%;
+      font-size: 1em;
       height: 5%;
      /* width: 13%;*/
-      border-color: #3B8597;
+      border: 2px solid #54BED8;
     }
-    #start-button:hover {
-      background-color: #910000;
-    }
+   
 
   </style>
 
@@ -137,7 +132,7 @@
 <body>
   <div id="overlay">
     <div>
-      <h2>Welcome to Copernican Perception </h2>
+       <h2>Welcome to <br><u class="title"><strong>Copernican Perception</strong></u></h2>
      <!--  <p>Click here to <a href='#' onclick='overlay()'>begin</a></p> -->
       <button  id="start-button" onclick='overlay()'>Start</button>
     </div>
@@ -145,7 +140,7 @@
 
   <div id="Stats-output"></div>
   <div id="output">
-    <h2 id="message">Welcome to <br><u class="title"><strong>Copernican Perception</strong></u></h2>
+    <h2 id="message">Star Information</h2>
     <p id="content"></p>
     <p id="luminosity"></p>
     <p id="BV"></p>
@@ -154,12 +149,12 @@
 
   <div id="control">
     <h2>Control Panel</h2>
-    <p>Movement - <strong>WASD</strong></p>
-    <p>Toggle Speed - <strong>123</strong></p>
-    <p>Toggle Axis - <strong>X</strong></p>
-    <p>Toggle Constellations - <strong>C</strong></p>
-    <p>Elevate / Descend - <strong>R/F</strong></p>
-    <p>Return to Sun - <strong>H</strong></p>
+    <p><strong>WASD</strong> = Movement</p>
+    <p><strong>123</strong> = Toggle Speed</p>
+    <p><strong>X</strong> = Toggle Axis</p>
+    <p><strong>C</strong> = Toggle Constellations</p>
+    <p><strong>R/F</strong> = Elevate / Descend</p>
+    <p><strong>H</strong> = Return to Sun</p>
   </div>
   <div id='distance'>
     <div id='distance2'></div>
