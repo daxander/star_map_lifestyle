@@ -48,6 +48,7 @@ function nameConstellation(id){
     case 98: return "Orion (shield)"; break;
     case 133: return "Ursa Major (Big Dipper)"; break;
     case 138: return "Ursa Minor (Little Dipper)"; break;
+    case 122: return "Sculptor"; break;
     
     default: return "unmapped constellation"; break;
   }
