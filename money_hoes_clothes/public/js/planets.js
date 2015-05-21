@@ -120,10 +120,45 @@ function getPlanets(){
 
     saturn.position.set(142,0,0);
 
+    renderer.shadowMapEnabled = true;
+
+
+
+    geometry_rings    = new THREE.CylinderGeometry( 5, 4, .2 , 50 ,50); 
+    material_rings    = new THREE.MeshBasicMaterial(); 
+    material_rings.map = THREE.ImageUtils.loadTexture('public/rings.png');
+    var rings    = new THREE.Mesh( geometry_rings, material_rings );
+
+    rings.rotation.x = Math.PI / 2;
+    rings.rotation.y = Math.PI / 2;
+
+    rings.position.set(142,0,0);
+    scene.add( rings )
+    //  geometry_rings2    = new THREE.TorusGeometry( 5, .3 , 10 ,50); 
+    // material_rings2    = new THREE.MeshBasicMaterial(); 
+    // material_rings2.map = THREE.ImageUtils.loadTexture('public/rings.png');
+    // var rings2    = new THREE.Mesh( geometry_rings2, material_rings2 );
+
+
+
+
+    // rings2.position.set(142,0,0);
+    // scene.add( rings2 )
+
+    // var geometry_ring = new THREE.RingGeometry(4, 20, thetaSegments, phiSegments, 0, Math.PI * 2);
+    // var material_ring = new THREE.MeshBasicMaterial({wireframe: true})
+    // ring.map = THREE.ImageUtils.loadTexture('public/rings.png');
+
+    // var ring = new THREE.Mesh(geometry_ring, material_ring);
+    // ring.position.set(142, 0, 0);
+    // scene.add(ring);
+
+    
+
     var geometry8 = new THREE.SphereGeometry( 2.2, 60, 60 );
     var material8 = new THREE.MeshBasicMaterial( );
     material8.map  = THREE.ImageUtils.loadTexture('public/uranus.jpg');
-    var uranus = new THREE.Mesh( geometry7, material7 );
+    var uranus = new THREE.Mesh( geometry8, material8 );
 
     var radius   = 262,
     segments = 200,
@@ -139,7 +174,7 @@ function getPlanets(){
     var geometry9 = new THREE.SphereGeometry( 2, 60, 60 );
     var material9 = new THREE.MeshBasicMaterial( );
     material9.map  = THREE.ImageUtils.loadTexture('public/neptune.jpg');
-    var neptune = new THREE.Mesh( geometry8, material8 );
+    var neptune = new THREE.Mesh( geometry9, material9 );
 
     var radius   = 450,
     segments = 200,
@@ -153,7 +188,7 @@ function getPlanets(){
     neptune.position.set(450,0,0);
     
 
-    var geometry10 = new THREE.SphereGeometry( 6.6, 60, 60 );
+    var geometry10 = new THREE.SphereGeometry( 2, 60, 60 );
     var material10 = new THREE.MeshBasicMaterial( );
     material10.map  = THREE.ImageUtils.loadTexture('public/pluto.jpg');
     var pluto = new THREE.Mesh( geometry10, material10 );
