@@ -56,7 +56,6 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
 	}
 
-	//
 
 	this.handleResize = function () {
 
@@ -82,10 +81,6 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 			this.domElement.focus();
 
 		}
-
-		// $("#axisBtn").on('click', function() {
-		// 	toggleAxis();
-		// });
 
 		event.preventDefault();
 		event.stopPropagation();
@@ -132,13 +127,6 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
 		if ( this.activeLook ) {
 
-			// switch ( event.button ) {
-
-			// 	case 0: this.moveForward = false; break;
-			// 	case 2: this.moveBackward = false; break;
-
-			// }
-
 		}
 
 		this.mouseDragOn = false;
@@ -182,7 +170,7 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 			case 82: /*R*/ this.moveUp = true; break;
 			case 70: /*F*/ this.moveDown = true; break;
 
-			case 81: /*Q*/ this.freeze = !this.freeze; break;
+			case 81: /*Q*/ this.freeze = !this.freeze; camControls.lookSpeed = 0.05; break;
 			case 88: /*X*/ toggleAxis(); break;
 			
 			case 72: /*H*/ goHome(); break;
