@@ -13,7 +13,7 @@ constellations = function(data){
       // console.log(data["constellations"]["and"][i][0]);
 
       line.add( buildConst( new THREE.Vector3(posx, posy, posz), new THREE.Vector3( posx2, posy2, posz2 ), 0x0000FF) ); 
-      scene.add(line);
+      // scene.add(line);
       totalLines.push(line);
     }
   }
