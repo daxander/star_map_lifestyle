@@ -36,19 +36,16 @@ function nameConstellation(id){
 
   switch ( parseInt(id)) {
     case 3: return "<a href='https://en.wikipedia.org/wiki/Antlia' target='_blank'>Antlia</a>"; break;
-    // "https://en.wikipedia.org/wiki/Antlia"
-    case 30: return "Cassiopia"; break;
-    case 47: return "Crux (Southern Cross)"; break;
-    case 48: return "Crux (Southern Cross)"; break;
-    // "https://en.wikipedia.org/wiki/Crux"
-
+    case 30: return "<a href='http://en.wikipedia.org/wiki/Cassiopeia_(constellation)' target='_blank'>Cassiopia</a>"; break;
+    case 47: return "<a href='http://en.wikipedia.org/wiki/Crux' target='_blank'>Crux (Southern Cross)</a>"; break;
+    case 48: return "<a href='http://en.wikipedia.org/wiki/Crux' target='_blank'>Crux (Southern Cross)</a>"; break;
     case 95: return "Orion (body)"; break;
     case 96: return "Orion (belt)"; break;
     case 97: return "Orion (arm)"; break;
     case 98: return "Orion (shield)"; break;
-    case 133: return "Ursa Major (Big Dipper)"; break;
-    case 138: return "Ursa Minor (Little Dipper)"; break;
-    
+    case 133: return "<a href='http://en.wikipedia.org/wiki/Ursa_Major' target='_blank'>Ursa Major (Big Dipper)</a>"; break;
+    case 138: return "<a href='http://en.wikipedia.org/wiki/Ursa_Major' target='_blank'>Ursa Minor (Little Dipper)</a>"; break;
+  
     default: return "unmapped constellation"; break;
   }
 }
