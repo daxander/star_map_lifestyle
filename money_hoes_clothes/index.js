@@ -34,6 +34,16 @@ app.get('/constars', function(req, res){
   res.end()
 });
 
+app.get('/solar_system', function(req, res) {
+  res.sendFile(path.join(__dirname,"/solar_system.html"), function(err){
+    if (err){
+      console.log(err);
+    } else {
+      console.log('solar_system working');
+    }
+  });
+});
+
 var port = 3000;
 http.listen(port, function(){
     console.log('listening on *:'+port);
