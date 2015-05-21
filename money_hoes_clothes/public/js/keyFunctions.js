@@ -35,7 +35,7 @@ function findLocation() {
 function nameConstellation(id){
 
   switch ( parseInt(id)) {
-    case 3: return "<a href='https://en.wikipedia.org/wiki/Antlia'>Antlia</a>"; break;
+    case 3: return "<a href='https://en.wikipedia.org/wiki/Antlia' target='_blank'>Antlia</a>"; break;
     // "https://en.wikipedia.org/wiki/Antlia"
     case 30: return "Cassiopia"; break;
     case 47: return "Crux (Southern Cross)"; break;
