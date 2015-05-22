@@ -130,7 +130,7 @@
        targetList = [];
        clock = new THREE.Clock();
        scene = new THREE.Scene();
-       renderer = new THREE.WebGLRenderer();
+       renderer =  new THREE.WebGLRenderer();
        renderer.setSize( window.innerWidth, window.innerHeight );
        renderer.setSize( window.innerWidth, window.innerHeight );
        document.body.appendChild( renderer.domElement );
@@ -140,7 +140,7 @@
        scene.add(ambientLight);
 
       // // fly controls
-      // // position and point the camera to the center of the scene
+      // // position and point tWebGLRendererhe camera to the center of the scene
       camera.position.z = 1;
       camera.lookAt(new THREE.Vector3(0, 0, 0));
 
@@ -159,6 +159,8 @@
       camControls.verticalMax = 200.0;
       camControls.lon = -150000000;
       camControls.lat = 120000000;
+
+      
 
       ajax(); 
       getConstellations();

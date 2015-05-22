@@ -1,4 +1,24 @@
 function getPlanets(){
+
+    var imagePrefix = "public/starMap";
+    // var directions  = ["xpos", "xneg", "ypos", "yneg", "zpos", "zneg"];
+    var imageSuffix = ".jpg";
+    var skyGeometry = new THREE.CubeGeometry( 3000, 3000, 3000 ); 
+
+    scene.add( skyGeometry );   
+    
+    var materialArray = [];
+    for (var i = 0; i < 6; i++)
+        materialArray.push( new THREE.MeshBasicMaterial({
+            map: THREE.ImageUtils.loadTexture( imagePrefix + imageSuffix ),
+            side: THREE.BackSide
+        }));
+    var skyMaterial = new THREE.MeshFaceMaterial( materialArray );
+    var skyBox = new THREE.Mesh( skyGeometry, skyMaterial );
+    scene.add( skyBox );
+
+
+
     var geometry = new THREE.SphereGeometry( 5, 60, 60 );
     var material = new THREE.MeshBasicMaterial();
     material.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
@@ -6,10 +26,15 @@ function getPlanets(){
     var geometry2 = new THREE.SphereGeometry( 5.1, 60, 60 );
     var material2 = new THREE.MeshBasicMaterial({transparent: true, opacity:0.6} );
     material2.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
+
+    var geometry3 = new THREE.SphereGeometry( 5.4, 60, 60 );
+    var material3 = new THREE.MeshBasicMaterial({transparent: true, opacity:0.6} );
+    // material3.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
     // material2.opacity = 0.3;
 
     var sphere = new THREE.Mesh( geometry, material );
     var sphere2 = new THREE.Mesh( geometry2, material2 );
+    // var sphere3 = new THREE.Mesh( geometry3, material3 );
 
 
     sphere.position.set(0,0,0);
@@ -28,8 +53,10 @@ function getPlanets(){
     material_mer = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
     geometry_mer = new THREE.CircleGeometry( radius, segments );
     geometry_mer.vertices.shift();
+    mercury_orbit = new THREE.Line( geometry_mer, material_mer )
 
-    scene.add( new THREE.Line( geometry_mer, material_mer ) );
+    scene.add( mercury_orbit  );
+    targetList.push(mercury_orbit);
 
 
     mercury.position.set(6,0,0);
@@ -214,7 +241,7 @@ function getPlanets(){
     sphere.rotation.x = (60/180)*Math.PI;
     sphere.rotation.y = Date.now() * 0.0001;
     sphere2.rotation.x = -Math.PI;
-    sphere2.rotation.y = Date.now() * -0.0001;
+    sphere2.rotation.y = Date.now() * -0.00001;
 
     renderer.render( scene, camera );
 
