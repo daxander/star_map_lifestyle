@@ -87,7 +87,7 @@
     }
 
     #overlay div {
-      width: 500px;
+      width: 700px;
       margin: 300px auto;
       padding: 20px;
       text-align: center;
@@ -100,16 +100,14 @@
       text-decoration: none;
       color:#54BED8;
     }
-
-    #start-button {
-      font-family: 'Orbitron', sans-serif;
-      margin: 2px; 
-      font-size: 1em;
-      height: 5%;
-     /* width: 13%;*/
-      border: 2px solid #54BED8;
-    }
    
+   .start {
+      font-size: 1.8em;
+   }
+
+   .start:hover {
+    cursor: pointer;
+   }
 
   </style>
 
@@ -134,7 +132,8 @@
     <div>
        <h2>Welcome to <br><u class="title"><strong>Copernican Perception</strong></u></h2>
      <!--  <p>Click here to <a href='#' onclick='overlay()'>begin</a></p> -->
-      <button  id="start-button" onclick='overlay()'>Start</button>
+<!--       <button id="start-button" onclick='overlay()'>Start</button>
+ -->     <span onclick='overlay()' class="start">Start</span>
     </div>
   </div>
 
