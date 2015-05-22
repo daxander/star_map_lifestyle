@@ -167,23 +167,25 @@
 
       projector = new THREE.Projector();
       projector, mouse = { x: 0, y: 0 };
-      camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 1000 );
-           
-      targetList = [];
-      clock = new THREE.Clock();
-      scene = new THREE.Scene();
-      // window.freeze;
-      renderer = new THREE.WebGLRenderer();
-      renderer.setSize( window.innerWidth, window.innerHeight );
-      renderer.setSize( window.innerWidth, window.innerHeight );
-      document.body.appendChild( renderer.domElement );
 
-      // add subtle ambient lighting
-      var ambientLight = new THREE.AmbientLight(0x0c0c0c);
-      scene.add(ambientLight);
 
-   
-     // position and point the camera to the center of the scene
+      camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 100000 );
+             
+       targetList = [];
+       clock = new THREE.Clock();
+       scene = new THREE.Scene();
+       renderer =  new THREE.WebGLRenderer();
+       renderer.setSize( window.innerWidth, window.innerHeight );
+       renderer.setSize( window.innerWidth, window.innerHeight );
+       document.body.appendChild( renderer.domElement );
+
+       // add subtle ambient lighting
+       var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+       scene.add(ambientLight);
+
+
+      // // fly controls
+      // // position and point tWebGLRendererhe camera to the center of the scene
       camera.position.z = 1;
       camera.lookAt(new THREE.Vector3(0, 0, 0));
       camera.setLens(50);
@@ -196,10 +198,12 @@
       camControls.autoForward = false;
       camControls.lookVertical = true;
       camControls.constrainVertical = false;
-      camControls.verticalMin = 1.0;
-      camControls.verticalMax = 2.0;
-      camControls.lon = -1500000;
-      camControls.lat = 1200000;
+      camControls.verticalMin = 100.0;
+      camControls.verticalMax = 200.0;
+      camControls.lon = -150000000;
+      camControls.lat = 120000000;
+
+      
 
       ajax(); 
       getConstellations();

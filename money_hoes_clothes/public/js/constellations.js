@@ -14,6 +14,7 @@ constellations = function(data){
 
       line.add( buildConst( new THREE.Vector3(posx, posy, posz), new THREE.Vector3( posx2, posy2, posz2 ), 0xFFFFFF) ); 
       totalLines.push(line);
+      targetList.push(line);
     }
   }
 };
