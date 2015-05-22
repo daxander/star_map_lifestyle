@@ -13,6 +13,8 @@
       background-image: url(/public/starField.png);
       }
 
+
+
      #output { 
           font-family: 'Orbitron', sans-serif;
           opacity: 0.9;
@@ -136,14 +138,28 @@
        renderer.setSize( window.innerWidth, window.innerHeight );
        document.body.appendChild( renderer.domElement );
 
+       
+
+
        // add subtle ambient lighting
        var ambientLight = new THREE.AmbientLight(0x0c0c0c);
        scene.add(ambientLight);
 
       // // fly controls
       // // position and point the camera to the center of the scene
-      camera.position.z = 1;
+
+      camera.position.x = 0.53312911588065;
+      camera.position.y = -87.9159275990054;
+      camera.position.z = 11.12249324144347;
       camera.lookAt(new THREE.Vector3(0, 0, 0));
+      camera.rotation.x = 1.4841549021589044;
+      camera.rotation.y = 0.0007258048336244705;
+      camera.rotation.z = -0.008296085198361001;
+
+      
+
+
+
 
       camera.setLens(50);
 
@@ -160,6 +176,7 @@
       camControls.verticalMax = 2.0;
       camControls.lon = -150;
       camControls.lat = 120;
+
 
       ajax(); 
       // getConstellations();
