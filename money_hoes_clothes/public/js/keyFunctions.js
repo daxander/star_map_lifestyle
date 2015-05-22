@@ -63,3 +63,41 @@ function nameConstellation(id){
   }
 }
 
+
+
+// function toggleViews() {
+//   console.log(solarSystem);
+//   if (solarSystem) {
+//     console.log('stars');
+//     window.location.href = "/";
+    
+//   } else {
+//     console.log('planets');
+//     window.location.href = "/solar_system";
+    
+//   } 
+// }
+
+// var solarSystem = false;
+// function toggleViews() {
+//   console.log(solarSystem);
+//   if (solarSystem) {
+//     $.get('/', function() {
+//       redirect '/';
+//     });    
+//   } else {
+//     $.get('/solar_system', function() {
+//       redirect '/solar_system';
+//     });
+//   } 
+//   solarSystem = !solarSystem;
+// }
+
+
+
+
+
+
+
+
+

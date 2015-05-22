@@ -10,7 +10,11 @@
     .title { margin-top: 10px; font-size: 3em;}
     body {
       cursor: crosshair;
+<<<<<<< HEAD
+      background-image: url(/public/starField.png);
+=======
       /*background-image: url(/public/starField.png);*/
+>>>>>>> 26ca173b179cd73dfd7ff77ae8f011b1a176fbfd
       }
 
      #output { 
@@ -142,7 +146,9 @@
 
       // // fly controls
       // // position and point the camera to the center of the scene
-      camera.position.z = 1;
+      camera.position.x = -2;
+      camera.position.y = -120;
+      camera.position.z = 15;
       camera.lookAt(new THREE.Vector3(0, 0, 0));
 
       camera.setLens(50);
@@ -161,7 +167,9 @@
       camControls.lon = -150;
       camControls.lat = 120;
 
-      ajax(); 
+
+      //ajax(); 
+
       // getConstellations();
       // getConStars();
       getPlanets();

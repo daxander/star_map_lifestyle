@@ -14,7 +14,7 @@ function getPlanets(){
     var material2 = new THREE.MeshBasicMaterial( );
     material2.map  = THREE.ImageUtils.loadTexture('public/mercury.jpg');
     var mercury = new THREE.Mesh( geometry2, material2 );
-    
+
     var radius   = 6,
     segments = 64,
     material_mer = new THREE.LineBasicMaterial( { color: 0x0000ff } ),
@@ -22,7 +22,6 @@ function getPlanets(){
     geometry_mer.vertices.shift();
 
     scene.add( new THREE.Line( geometry_mer, material_mer ) );
-
 
     mercury.position.set(6,0,0);
     scene.add( mercury );
@@ -92,7 +91,6 @@ function getPlanets(){
 
     scene.add( new THREE.Line( geometry_jup, material_jup ) );
 
-
     jupiter.position.set(77.5,0,0);
     scene.add( jupiter );
 
@@ -134,6 +132,9 @@ function getPlanets(){
     var material9 = new THREE.MeshBasicMaterial( );
     material9.map  = THREE.ImageUtils.loadTexture('public/neptune.jpg');
     var neptune = new THREE.Mesh( geometry8, material8 );
+
+    neptune.position.set(450,0,0);
+    scene.add( neptune );
 
     var radius   = 450,
     segments = 64,

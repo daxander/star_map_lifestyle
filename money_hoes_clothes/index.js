@@ -15,9 +15,11 @@ app.get('/', function(req, res){
       console.log(err);
     } else{
       console.log('its working');
+      solarSystem = false;
     }
   });
 });
+
 
 app.get('/index', function(req, res){
   res.status(200).send(stats)
@@ -32,6 +34,17 @@ app.get('/constellations', function(req, res){
 app.get('/constars', function(req, res){
   res.status(200).send(conStats)
   res.end()
+  });
+
+app.get('/solar_system', function(req, res) {
+  res.sendFile(path.join(__dirname,"/solar_system.html"), function(err){
+    if (err){
+      console.log(err);
+    } else {
+      console.log('solar_system working');
+      solarSystem = true;
+    }
+  });
 });
 
 var port = 3000;
@@ -104,6 +117,11 @@ function getConst() {
 
 getStars();
 getConst();
+
+
+
+
+
 
 
 
