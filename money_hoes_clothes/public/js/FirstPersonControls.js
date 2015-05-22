@@ -56,7 +56,6 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
 	}
 
-	//
 
 	this.handleResize = function () {
 
@@ -82,10 +81,6 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 			this.domElement.focus();
 
 		}
-
-		// $("#axisBtn").on('click', function() {
-		// 	toggleAxis();
-		// });
 
 		event.preventDefault();
 		event.stopPropagation();
@@ -131,13 +126,6 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		event.stopPropagation();
 
 		if ( this.activeLook ) {
-
-			// switch ( event.button ) {
-
-			// 	case 0: this.moveForward = false; break;
-			// 	case 2: this.moveBackward = false; break;
-
-			// }
 
 		}
 

@@ -10,10 +10,9 @@ constellations = function(data){
       var posz2 = data.constellations[x][i+1][2];
       line = new THREE.Object3D();
       console.log("making line")
-      // console.log(data["constellations"]["and"][i][0]);
 
-      line.add( buildConst( new THREE.Vector3(posx, posy, posz), new THREE.Vector3( posx2, posy2, posz2 ), 0x0000FF) ); 
-      scene.add(line);
+
+      line.add( buildConst( new THREE.Vector3(posx, posy, posz), new THREE.Vector3( posx2, posy2, posz2 ), 0xFFFFFF) ); 
       totalLines.push(line);
     }
   }
@@ -21,7 +20,7 @@ constellations = function(data){
 
 function buildConst( src, dst, colorHex ) {
  var geom = new THREE.Geometry(), mat;
- mat = new THREE.LineBasicMaterial({ linewidth: 4, color: colorHex });
+ mat = new THREE.LineBasicMaterial({ linewidth: 1, color: colorHex });
  geom.vertices.push( src.clone() );
  geom.vertices.push( dst.clone() );
  // geom.computeLineDistances(); // This one is SUPER important, otherwise dashed lines will appear as simple plain lines

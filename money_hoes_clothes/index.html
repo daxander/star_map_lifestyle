@@ -3,7 +3,6 @@
 <head>
   <title>Copernican Perception</title>
   <style>
-    body { margin: 0; }
     canvas { width: 100%; height: 100% }
     p { margin: 2px; font-size: 1.1em;}
     h2 { margin-bottom: 10px; margin-top: 5px;}
@@ -11,72 +10,109 @@
     .title { margin-top: 10px; font-size: 3em;}
     body {
       cursor: crosshair;
-      background-image: url(/public/starField.png);
+        height:100%;
+        margin:0;
+        padding:0;
       }
 
-     #output { 
-          font-family: 'Orbitron', sans-serif;
-          opacity: 0.9;
-          position: fixed;
-          top: 0px;
-          margin-left: 10px;
-          margin-top: 10px;
-          padding-left: 10px;
-          padding-top: 10px;
-          width: 300px;
-          height: 200px;
-          color: #54BED8;
-          border-left: 2px solid #54BED8; 
-          border-top: 2px solid #54BED8;     
-      }
-
-      
+    #output { 
+      font-family: 'Orbitron', sans-serif;
+      opacity: 0.9;
+      position: fixed;
+      top: 0px;
+      margin-left: 10px;
+      margin-top: 10px;
+      padding-left: 10px;
+      padding-top: 10px;
+      width: 300px;
+      height: 200px;
+      color: #54BED8;
+      border-left: 2px solid #54BED8; 
+      border-top: 2px solid #54BED8;     
+    }
+    
     #control {
-          font-family: 'Orbitron', sans-serif;
-          opacity: 0.9;
-          position: absolute;
-          right: 0px;
-          top: 0px;
-          margin-right: 10px;
-          margin-top: 10px;
-          padding-right: 10px;
-          padding-top: 10px;
-          width: 300px;
-          height: 200px;
-          color: #54BED8;
-          border-right: 2px solid #54BED8; 
-          border-top: 2px solid #54BED8;  
-          letter-spacing: 2px;
-      }
+      font-family: 'Orbitron', sans-serif;
+      opacity: 0.9;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      margin-right: 10px;
+      margin-top: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+      width: 300px;
+      height: 200px;
+      color: #54BED8;
+      border-right: 2px solid #54BED8; 
+      border-top: 2px solid #54BED8;  
+      letter-spacing: 2px;
+    }
 
-      #distance {
-       font-family: 'Orbitron', sans-serif;
-       opacity: 0.9;
-       position: absolute;
-       left: 0px;
-       bottom: 0px;
-       margin-left: 10px;
-       margin-bottom: 10px;
-       padding-left: 10px;
-       padding-bottom: 10px;
-       width: 300px;
-       height: 200px;
-       color: #54BED8;
-       border-left: 2px solid #54BED8; 
-       border-bottom: 2px solid #54BED8;  
-       letter-spacing: 2px;
-     }
+    #distance {
+      font-family: 'Orbitron', sans-serif;
+      opacity: 0.9;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      width: 300px;
+      height: 200px;
+      color: #54BED8;
+      border-left: 2px solid #54BED8; 
+      border-bottom: 2px solid #54BED8;  
+      letter-spacing: 2px;
+   }
 
-     #distance2 {
+    #distance2 {
       position: absolute;
       bottom: 0px;
       left: 0px;
       margin-left: 10px;
       margin-bottom: 10px;
-     }
+    }
 
-    
+    #overlay {
+      visibility: visible;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width:100%;
+      height:100%;
+      text-align:center;
+      z-index: 1000;
+    }
+
+    #overlay div {
+      width: 500px;
+      margin: 300px auto;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      color: #54BED8;
+      border: 2px solid #54BED8; 
+    }
+
+    a {
+      text-decoration: none;
+      color:#54BED8;
+    }
+
+    #start-button {
+      font-family: 'Orbitron', sans-serif;
+      margin: 2px; 
+      font-size: 1em;
+      height: 5%;
+     /* width: 13%;*/
+      border: 2px solid #54BED8;
+    }
+   
+
   </style>
+
   <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500,700,900' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="/public/typed.js"></script>
@@ -90,35 +126,41 @@
   <script src="/public/js/threex.spaceships.js"></script>
   <script src="/public/js/axisBuilder.js"></script>
   <script src="/public/js/keyFunctions.js"></script>
-
+  <script src="/public/js/overlay.js"></script>
 
 </head>
 <body>
+  <div id="overlay">
+    <div>
+       <h2>Welcome to <br><u class="title"><strong>Copernican Perception</strong></u></h2>
+     <!--  <p>Click here to <a href='#' onclick='overlay()'>begin</a></p> -->
+      <button  id="start-button" onclick='overlay()'>Start</button>
+    </div>
+  </div>
 
-    <div id="Stats-output"></div>
-    <div id="output">
-      <h2 id="message">Welcome to <br><u class="title"><strong>Copernican Perception</strong></u></h2>
-      <p id="content"></p>
-      <p id="luminosity"></p>
-      <p id="BV"></p>
-      <p id="constellation"></p>
-    </div>
-  
-    <div id="control">
-      <h2>Control Panel</h2>
-      <p>Movement - <strong>WASD</strong></p>
-      <p>Toggle Speed - <strong>123</strong></p>
-      <p>Toggle Axis - <strong>X</strong></p>
-      <p>Toggle Constellations - <strong>C</strong></p>
-      <p>Elevate / Descend - <strong>R/F</strong></p>
-      <p>Return to Sun - <strong>H</strong></p>
-    </div>
-    <div id='distance'>
-      <div id='distance2'></div>
-    </div>
+  <div id="Stats-output"></div>
+  <div id="output">
+    <h2 id="message">Star Information</h2>
+    <p id="content"></p>
+    <p id="luminosity"></p>
+    <p id="BV"></p>
+    <p id="constellation"></p>
+  </div>
+
+  <div id="control">
+    <h2>Control Panel</h2>
+    <p><strong>WASD</strong> = Movement</p>
+    <p><strong>123</strong> = Toggle Speed</p>
+    <p><strong>X</strong> = Toggle Axis</p>
+    <p><strong>C</strong> = Toggle Constellations</p>
+    <p><strong>R/F</strong> = Elevate / Descend</p>
+    <p><strong>H</strong> = Return to Sun</p>
+  </div>
+  <div id='distance'>
+    <div id='distance2'></div>
+  </div>
 
   <script>
-
     $(function() {
 
       projector = new THREE.Projector();
@@ -128,6 +170,7 @@
       targetList = [];
       clock = new THREE.Clock();
       scene = new THREE.Scene();
+      // window.freeze;
       renderer = new THREE.WebGLRenderer();
       renderer.setSize( window.innerWidth, window.innerHeight );
       renderer.setSize( window.innerWidth, window.innerHeight );
@@ -137,17 +180,15 @@
       var ambientLight = new THREE.AmbientLight(0x0c0c0c);
       scene.add(ambientLight);
 
-      // // fly controls
-      // // position and point the camera to the center of the scene
+   
+     // position and point the camera to the center of the scene
       camera.position.z = 1;
       camera.lookAt(new THREE.Vector3(0, 0, 0));
-
       camera.setLens(50);
 
       camControls = new THREE.FirstPersonControls(camera);
-      camControls.lookSpeed = 0.05;
+      camControls.lookSpeed = 0;
       camControls.movementSpeed = 3;
-
       camControls.noFly = true;
       camControls.noZoom = true;
       camControls.autoForward = false;
@@ -161,11 +202,8 @@
       ajax(); 
       getConstellations();
       getConStars()
-
       render();
-
     });
-
-</script> 
+  </script> 
 </body>
 </html>

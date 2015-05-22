@@ -56,7 +56,7 @@ http.listen(port, function(){
 var stats = [];
 
 function getStars() {
-  var endpoint = "https://data.nasa.gov/resource/5bv2-dyn2.json?$where=distance_light_years<580&$limit=50000";
+  var endpoint = "https://data.nasa.gov/resource/5bv2-dyn2.json?$where=distance_light_years<200&$limit=50000";
   // var endpoint = "http://star-api.herokuapp.com/api/v1/stars?max[distly]=100$limit=3000";
   request(endpoint, function(error, response, body) {
     if(error) {
