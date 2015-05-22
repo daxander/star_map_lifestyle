@@ -192,6 +192,8 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 			case 50: /*2*/ speed(8); break;
 			case 51: /*3*/ speed(100); break;
 
+			case 48: /*0*/ toggleViews(); break;
+
 		}
 
 	};
