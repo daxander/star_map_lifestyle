@@ -56,7 +56,6 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
 	}
 
-	//
 
 	this.handleResize = function () {
 
@@ -82,10 +81,6 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 			this.domElement.focus();
 
 		}
-
-		// $("#axisBtn").on('click', function() {
-		// 	toggleAxis();
-		// });
 
 		event.preventDefault();
 		event.stopPropagation();
@@ -131,13 +126,6 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		event.stopPropagation();
 
 		if ( this.activeLook ) {
-
-			// switch ( event.button ) {
-
-			// 	case 0: this.moveForward = false; break;
-			// 	case 2: this.moveBackward = false; break;
-
-			// }
 
 		}
 
@@ -192,6 +180,8 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 			case 50: /*2*/ speed(8); break;
 			case 51: /*3*/ speed(100); break;
 
+			case 80: /*P*/ window.location.href = "/"; break;
+			case 79: /*O*/ window.location.href = "/solar_system"; break;
 		}
 
 	};
