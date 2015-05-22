@@ -65,18 +65,18 @@ function nameConstellation(id){
 
 
 
-function toggleViews() {
-  console.log(solarSystem);
-  if (solarSystem) {
-    console.log('stars');
-    window.location.href = "/";
+// function toggleViews() {
+//   console.log(solarSystem);
+//   if (solarSystem) {
+//     console.log('stars');
+//     window.location.href = "/";
     
-  } else {
-    console.log('planets');
-    window.location.href = "/solar_system";
+//   } else {
+//     console.log('planets');
+//     window.location.href = "/solar_system";
     
-  } 
-}
+//   } 
+// }
 
 // var solarSystem = false;
 // function toggleViews() {
