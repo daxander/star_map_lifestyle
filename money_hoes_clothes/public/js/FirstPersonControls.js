@@ -134,7 +134,7 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 	};
 
 	this.onMouseMove = function ( event ) {
-
+		// turn all this to key movements
 		if ( this.domElement === document ) {
 
 			this.mouseX = event.pageX - this.viewHalfX;
