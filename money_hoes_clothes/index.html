@@ -127,6 +127,8 @@
   <script src="/public/js/axisBuilder.js"></script>
   <script src="/public/js/keyFunctions.js"></script>
   <script src="/public/js/overlay.js"></script>
+  <script src='/public/js/THREEx.WindowResize.js'></script>
+
 
 </head>
 <body>
@@ -173,7 +175,7 @@
       clock = new THREE.Clock();
       scene = new THREE.Scene();
       renderer =  new THREE.WebGLRenderer();
-      renderer.setSize( window.innerWidth, window.innerHeight );
+      // renderer.setSize( window.innerWidth, window.innerHeight );
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
@@ -201,11 +203,11 @@
       camControls.lon = -150000000;
       camControls.lat = 120000000;
  
-
       ajax(); 
       getConstellations();
       getConStars()
       render();
+      THREEx.WindowResize(renderer, camera);
     });
   </script> 
 </body>

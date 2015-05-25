@@ -14,7 +14,7 @@
       background-image: url(/public/starField.png);
 
       }
-      
+
      #output { 
           font-family: 'Orbitron', sans-serif;
           opacity: 0.9;
@@ -92,6 +92,7 @@
   <script src="/public/js/axisBuilder.js"></script>
   <script src="/public/js/keyFunctions.js"></script>
   <script src="/public/js/planets.js"></script>
+  <script src='/public/js/THREEx.WindowResize.js'></script>
 
 
 
@@ -180,7 +181,7 @@
       // getConStars();
       getPlanets();
       planetRender();
-
+      THREEx.WindowResize(renderer, camera);
     });
 
 </script> 
