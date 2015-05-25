@@ -28,8 +28,8 @@ function findLocation() {
   var location = Math.sqrt((camera.position.x*camera.position.x)+(camera.position.y*camera.position.y)+(camera.position.z*camera.position.z)) * 3.257;
   var locationDiv = document.createElement('div');
   locationDiv.innerHTML = '<h2>Current distance from sun is:</h2>' + location + ' <p><strong>light years</strong></p>';
-  document.getElementById('distance2').innerHTML = '';
-  document.getElementById('distance2').appendChild(locationDiv);
+  // document.getElementById('distance2').innerHTML = '';
+  // document.getElementById('distance2').appendChild(locationDiv);
 }
 
 function nameConstellation(id){

@@ -1,414 +1,161 @@
 function getPlanets(){
 
-    var imagePrefix = "public/starMap";
-    // var directions  = ["xpos", "xneg", "ypos", "yneg", "zpos", "zneg"];
-    var imageSuffix = ".jpg";
-    var skyGeometry = new THREE.CubeGeometry( 3000, 3000, 3000 ); 
+    var sunTexture = 'public/sunFinal.jpg';
+    var mercuryTexture = 'public/mercury.jpg';
+    var earthTexture = 'public/earth.jpg';
+    var venusTexture = 'public/venus.jpg';
+    var marsTexture = 'public/mars.jpg';
+    var jupiterTexture = 'public/jupiter.jpg';
+    var saturnTexture = 'public/saturn.jpg';
+    var uranusTexture = 'public/uranus.jpg';
+    var neptuneTexture = 'public/neptune.jpg';
+    var plutoTexture = 'public/pluto.jpg';
+    var earthRotationx = (23.5/180)*Math.PI;
+    var earthRotationy = 0.0001;
+    var sunRotationy = -0.0001;
 
-    scene.add( skyGeometry );   
-    
-    var materialArray = [];
-    for (var i = 0; i < 6; i++)
-        materialArray.push( new THREE.MeshBasicMaterial({
-            map: THREE.ImageUtils.loadTexture( imagePrefix + imageSuffix ),
-            side: THREE.BackSide
-        }));
-    var skyMaterial = new THREE.MeshFaceMaterial( materialArray );
-    var skyBox = new THREE.Mesh( skyGeometry, skyMaterial );
-    scene.add( skyBox );
-
-
-
-    var geometry = new THREE.SphereGeometry( 5, 60, 60 );
-    var material = new THREE.MeshBasicMaterial();
-    material.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
-
-    var geometry2 = new THREE.SphereGeometry( 5.1, 60, 60 );
-    var material2 = new THREE.MeshBasicMaterial({transparent: true, opacity:0.6} );
-    material2.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
-
-    var geometry3 = new THREE.SphereGeometry( 5.4, 60, 60 );
-    var material3 = new THREE.MeshBasicMaterial({transparent: true, opacity:0.6} );
-    // material3.map  = THREE.ImageUtils.loadTexture('public/sunFinal.jpg');
-    // material2.opacity = 0.3;
-
-    var sphere = new THREE.Mesh( geometry, material );
-    var sphere2 = new THREE.Mesh( geometry2, material2 );
-    // var sphere3 = new THREE.Mesh( geometry3, material3 );
-
-
-    sphere.position.set(0,0,0);
-
-   
-    
-   
-
-    var geometry2 = new THREE.SphereGeometry( .5, 60, 60 );
-
-    var material2 = new THREE.MeshBasicMaterial( );
-    material2.map  = THREE.ImageUtils.loadTexture('public/mercury.jpg');
-    var mercury = new THREE.Mesh( geometry2, material2 );
-
-    var radius   = 6,
-
-    segments = 200,
-    material_mer = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
-    geometry_mer = new THREE.CircleGeometry( radius, segments );
-    geometry_mer.vertices.shift();
-    mercury_orbit = new THREE.Line( geometry_mer, material_mer )
-
-
-    scene.add( new THREE.Line( geometry_mer, material_mer ) );
-
-
-    mercury.position.set(6,0,0);
+    planets = [];
     
 
-    var geometry3 = new THREE.SphereGeometry( 1.5, 60, 60 );
+    function setBackground(){
 
-    var material3 = new THREE.MeshBasicMaterial( );
-    material3.map  = THREE.ImageUtils.loadTexture('public/venus.jpg');
-    var venus = new THREE.Mesh( geometry3, material3 );
+        var image = "public/starMap.jpg";
+        
+        var skyGeometry = new THREE.CubeGeometry( 3000, 3000, 3000 ); 
 
-    var radius   = 10.5,
+        scene.add( skyGeometry );   
+        
+        var materialArray = [];
+        for (var i = 0; i < 6; i++)
+            materialArray.push( new THREE.MeshBasicMaterial({
+                map: THREE.ImageUtils.loadTexture( image ),
+                side: THREE.BackSide
+            }));
+        var skyMaterial = new THREE.MeshFaceMaterial( materialArray );
+        var skyBox = new THREE.Mesh( skyGeometry, skyMaterial );
+        
+        scene.add( skyBox );
+    }
 
-    segments = 200,
-    material_ven = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
+    function makeSphere( x, y, z, size, opac, texture, spin_y){
+        geometry = new THREE.SphereGeometry(size, 60, 60);
+        material = new THREE.MeshBasicMaterial({transparent: true, opacity: opac});
+        material.map = THREE.ImageUtils.loadTexture(texture);
 
-    geometry_ven = new THREE.CircleGeometry( radius, segments );
-    geometry_ven.vertices.shift();
+        sphere = new THREE.Mesh( geometry, material );
 
-    scene.add( new THREE.Line( geometry_ven, material_ven ) );
+        sphere.position.set(x,y,z);
 
+        sphere.spin_x = Math.PI;
+        sphere.spin_y = spin_y;
 
-    venus.position.set(10.5,0,0);
+        scene.add( sphere );
+        planets.push( sphere );
 
-    
 
-    var geometry4 = new THREE.SphereGeometry( 1.7, 60, 60 );
+    }
 
-    var material4 = new THREE.MeshBasicMaterial( );
-    material4.map  = THREE.ImageUtils.loadTexture('public/earth.jpg');
-    var earth = new THREE.Mesh( geometry4, material4 );
+    function makeOrbit(radius) {
+        segments = 200,
+        material = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
+        geometry = new THREE.CircleGeometry( radius, segments );
+        geometry.vertices.shift();
+ 
 
-    var radius   = 15,
+        orbit = new THREE.Line( geometry, material )
 
-    segments = 200,
-    material_ear = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
 
-    geometry_ear = new THREE.CircleGeometry( radius, segments );
-    geometry_ear.vertices.shift();
-
-    scene.add( new THREE.Line( geometry_ear, material_ear ) );
-
-
-    earth.position.set(15,0,0);
-
-    
-
-
-    var geometry5 = new THREE.SphereGeometry( 0.9, 60, 60 );
-    var material5 = new THREE.MeshBasicMaterial( );
-    material5.map  = THREE.ImageUtils.loadTexture('public/mars.jpg');
-    var mars = new THREE.Mesh( geometry5, material5 );
-
-    var radius   = 22.5,
-
-    segments = 200,
-    material_mar = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
-
-    geometry_mar = new THREE.CircleGeometry( radius, segments );
-    geometry_mar.vertices.shift();
-
-    scene.add( new THREE.Line( geometry_mar, material_mar ) );
-
-
-    mars.position.set(22.5,0,0);
-    scene.add( mars );
-
-
-    var geometry6 = new THREE.SphereGeometry( 3.2, 60, 60 );
-
-    var material6 = new THREE.MeshBasicMaterial( );
-    material6.map  = THREE.ImageUtils.loadTexture('public/jupiter.jpg');
-    var jupiter = new THREE.Mesh( geometry6, material6 );
-
-    var radius   = 77.5,
-
-    segments = 200,
-    material_jup = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
-
-    geometry_jup = new THREE.CircleGeometry( radius, segments );
-    geometry_jup.vertices.shift();
-
-    scene.add( new THREE.Line( geometry_jup, material_jup ) );
-
-
-    jupiter.position.set(77.5,0,0);
-
-    
-
-    var geometry7 = new THREE.SphereGeometry( 2.8, 60, 60 );
-
-    var material7 = new THREE.MeshBasicMaterial( );
-    material7.map  = THREE.ImageUtils.loadTexture('public/saturn.jpg');
-    var saturn = new THREE.Mesh( geometry7, material7 );
-
-    var radius   = 142,
-
-    segments = 200,
-    material_sat = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
-
-    geometry_sat = new THREE.CircleGeometry( radius, segments );
-    geometry_sat.vertices.shift();
-
-    scene.add( new THREE.Line( geometry_sat, material_sat ) );
-
-
-    saturn.position.set(142,0,0);
-
-
-    renderer.shadowMapEnabled = true;
-
-
-
-    geometry_rings    = new THREE.CylinderGeometry( 5, 4, .2 , 50 ,50); 
-    material_rings    = new THREE.MeshBasicMaterial(); 
-    material_rings.map = THREE.ImageUtils.loadTexture('public/rings.png');
-    var rings    = new THREE.Mesh( geometry_rings, material_rings );
-
-    rings.rotation.x = Math.PI / 2;
-    rings.rotation.y = Math.PI / 2;
-
-    rings.position.set(142,0,0);
-    scene.add( rings )
-    //  geometry_rings2    = new THREE.TorusGeometry( 5, .3 , 10 ,50); 
-    // material_rings2    = new THREE.MeshBasicMaterial(); 
-    // material_rings2.map = THREE.ImageUtils.loadTexture('public/rings.png');
-    // var rings2    = new THREE.Mesh( geometry_rings2, material_rings2 );
-
-
-
-
-    // rings2.position.set(142,0,0);
-    // scene.add( rings2 )
-
-    // var geometry_ring = new THREE.RingGeometry(4, 20, thetaSegments, phiSegments, 0, Math.PI * 2);
-    // var material_ring = new THREE.MeshBasicMaterial({wireframe: true})
-    // ring.map = THREE.ImageUtils.loadTexture('public/rings.png');
-
-    // var ring = new THREE.Mesh(geometry_ring, material_ring);
-    // ring.position.set(142, 0, 0);
-    // scene.add(ring);
-
-    
-
-    var geometry8 = new THREE.SphereGeometry( 2.2, 60, 60 );
-    var material8 = new THREE.MeshBasicMaterial( );
-    material8.map  = THREE.ImageUtils.loadTexture('public/uranus.jpg');
-    var uranus = new THREE.Mesh( geometry8, material8 );
-
-    var radius   = 262,
-    segments = 200,
-    material_ura = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
-
-    geometry_ura = new THREE.CircleGeometry( radius, segments );
-    geometry_ura.vertices.shift();
-
-    scene.add( new THREE.Line( geometry_ura, material_ura ) );
-
-
-    uranus.position.set(262,0,0);
-
-
-    var geometry9 = new THREE.SphereGeometry( 2, 60, 60 );
-    var material9 = new THREE.MeshBasicMaterial( );
-    material9.map  = THREE.ImageUtils.loadTexture('public/neptune.jpg');
-
-    var neptune = new THREE.Mesh( geometry9, material9 );
-
-
-    var radius   = 450,
-    segments = 200,
-    material_nep = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
-
-    geometry_nep = new THREE.CircleGeometry( radius, segments );
-    geometry_nep.vertices.shift();
-
-    scene.add( new THREE.Line( geometry_nep, material_nep ) );
-
-
-    neptune.position.set(450,0,0);
-
-    
-
-    var geometry10 = new THREE.SphereGeometry( 2, 60, 60 );
-
-    var material10 = new THREE.MeshBasicMaterial( );
-    material10.map  = THREE.ImageUtils.loadTexture('public/pluto.jpg');
-    var pluto = new THREE.Mesh( geometry10, material10 );
-
-    var radius   = 650,
-
-    segments = 200,
-    material_plu = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
-
-    geometry_plu = new THREE.CircleGeometry( radius, segments );
-    geometry_plu.vertices.shift();
-
-    scene.add( new THREE.Line( geometry_plu, material_plu ) );
-
-
-    pluto.position.set(650,0,0);
-
-
+        scene.add( orbit );
+    }
   
-    var planets = [sphere, earth, mercury];
 
-
-    var animateSun = function () {
-
-    requestAnimationFrame( animateSun );
-
-    sphere.rotation.x = (60/180)*Math.PI;
-    sphere.rotation.y = Date.now() * 0.0001;
-    sphere2.rotation.x = -Math.PI;
-    sphere2.rotation.y = Date.now() * -0.00001;
-
-    renderer.render( scene, camera );
-
-    }
-    var animateMercury = function () {
-
-    requestAnimationFrame( animateMercury );
-
-    mercury.rotation.x = (23.5/180)*Math.PI;
-    mercury.rotation.y = Date.now() * 0.0001;
-
-    renderer.render( scene, camera );
-
-    }
-    var animateVenus = function () {
-
-    requestAnimationFrame( animateVenus );
-
-    venus.rotation.x = (23.5/180)*Math.PI;
-    venus.rotation.y = Date.now() * 0.0001;
-
-    renderer.render( scene, camera );
+    function makeSun(){
+        makeSphere( 0,0,0, 5, 1.0, sunTexture, earthRotationy );
+        makeSphere( 0,0,0, 5.1, 0.6, sunTexture, sunRotationy );
 
     }
 
-    var animateEarth = function () {
-
-    requestAnimationFrame( animateEarth );
-
-    earth.rotation.x = (23.5/180)*Math.PI;
-    earth.rotation.y = Date.now() * 0.0001;
-
-    renderer.render( scene, camera );
-
+    function makeMercury(){
+        makeSphere( 6,0,0, .5, 1.0, mercuryTexture, earthRotationy);
+        makeOrbit(6);
     }
-    var animateMars = function () {
 
-    requestAnimationFrame( animateMars );
-
-    mars.rotation.x = (23.5/180)*Math.PI;
-    mars.rotation.y = Date.now() * 0.0001;
-
-    renderer.render( scene, camera );
-
+    function makeVenus(){
+        makeSphere( 10.5,0,0, 1.5, 1.0, venusTexture, earthRotationy);
+        makeOrbit( 10.5 );
     }
-    var animateJupiter = function () {
 
-    requestAnimationFrame( animateJupiter );
-
-    jupiter.rotation.x = (23.5/180)*Math.PI;
-    jupiter.rotation.y = Date.now() * 0.0001;
-
-    renderer.render( scene, camera );
-
+    function makeEarth(){
+        makeSphere( 15,0,0, 1.7 , 1.0, earthTexture, earthRotationy);
+        makeOrbit( 15 );
     }
-    var animateSaturn = function () {
 
-    requestAnimationFrame( animateSaturn );
-
-    saturn.rotation.x = (23.5/180)*Math.PI;
-    saturn.rotation.y = Date.now() * 0.0001;
-
-    renderer.render( scene, camera );
-
+    function makeMars(){
+        makeSphere( 22.5,0,0, .9 , 1.0, marsTexture, earthRotationy);
+        makeOrbit( 22.5 );
     }
-    var animateUranus = function () {
 
-    requestAnimationFrame( animateUranus );
-
-    uranus.rotation.x = (23.5/180)*Math.PI;
-    uranus.rotation.y = Date.now() * 0.0001;
-
-    renderer.render( scene, camera );
-
+    function makeJupiter(){
+        makeSphere( 77.5,0,0, 3.2 , 1.0, jupiterTexture, earthRotationy);
+        makeOrbit( 77.5 );
     }
-    var animateNeptune = function () {
 
-    requestAnimationFrame( animateNeptune );
-
-    neptune.rotation.x = (23.5/180)*Math.PI;
-    neptune.rotation.y = Date.now() * 0.0001;
-
-    renderer.render( scene, camera );
-
+    function makeSaturn(){
+        makeSphere( 142,0,0, 2.8 , 1.0, saturnTexture, earthRotationy);
+        makeOrbit( 142 );
     }
-    var animatePluto = function () {
 
-    requestAnimationFrame( animatePluto );
+    function makeUranus(){
+        makeSphere( 262,0,0, 2.2 , 1.0, uranusTexture, earthRotationy);
+        makeOrbit( 262 );
+    }
 
-    pluto.rotation.x = (23.5/180)*Math.PI;
-    pluto.rotation.y = Date.now() * 0.001;
 
-    renderer.render( scene, camera );
+    function makeNeptune(){
+        makeSphere( 450,0,0, 2 , 1.0, neptuneTexture, earthRotationy);
+        makeOrbit( 450 );
+    }
+
+    function makePluto(){
+        makeSphere( 650,0,0, 2 , 1.0, plutoTexture, earthRotationy);
+        makeOrbit( 650 );
+    }
+
+    function makeSaturnRings(){
+        geometry_rings    = new THREE.CylinderGeometry( 8, 4, .2 , 50 ,50); 
+        material_rings    = new THREE.MeshBasicMaterial(); 
+        material_rings.map = THREE.ImageUtils.loadTexture('public/rings.png');
+        var rings    = new THREE.Mesh( geometry_rings, material_rings );
+
+        rings.rotation.x = Math.PI / 2;
+        rings.rotation.y = Math.PI / 2;
+
+        rings.position.set(142,0,0);
+        scene.add( rings )
 
     }
 
-    // console.log(planets);
-    animateSun();
-    animateMercury();
-    animateVenus();
+    setBackground();
+    makeSun();
+    makeMercury();
+    makeVenus();
+    makeEarth();
+    makeMars();
+    makeJupiter();
+    makeSaturn();
+    makeSaturnRings();
+    makeNeptune();
+    makeUranus();
+    makePluto();
+    
 
-    animateEarth();
-    animateMars();
-    animateJupiter();
-    animateSaturn();
-    animateUranus();
-    animateNeptune();
-    animatePluto();
+};
 
-    // for (var i=0; i<planets.length; i++) {
-    //   console.log("hey israa it worked");
-    //   var planet = planets[i];
-    //   // console.log(p.rotation.x);
-    //   // requestAnimationFrame( animate );
+   function animate() {
+          for (var i = 0; i < planets.length; i++) {
+            planets[i].rotation.x = planets[i].spin_x;
+            planets[i].rotation.y = Date.now() * planets[i].spin_y; 
+            console.log("planet"); 
+          }
+};
 
-    //   // sphere.rotation.x += (23.5/180)*Math.PI;
-    //   // sphere.rotation.y += Date.now() * 0.001;
-
-    //   // renderer.render( scene, camera );
-    //   animate(planet);
-    // }
-
-      scene.add( pluto );
-      scene.add( neptune );
-      scene.add( uranus );
-      scene.add( saturn );
-      scene.add( jupiter );
-      scene.add( earth );
-      scene.add( sphere );
-      scene.add( sphere2 );
-      scene.add( mercury );
-      scene.add( venus );
-
-
-
-
-
-  };
