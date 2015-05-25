@@ -109,6 +109,13 @@
       font-size: 1.8em;
    }
 
+   .skip {
+    font-size: .5em;
+   }
+   .skip:hover {
+    cursor: pointer;
+   }
+
    .start:hover {
     cursor: pointer;
    }
@@ -134,6 +141,7 @@
       50% { opacity:0; }
       100% { opacity:3; }
   }
+
   </style>
 
   <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500,700,900' rel='stylesheet' type='text/css'>
@@ -150,6 +158,8 @@
   <script src="/public/js/axisBuilder.js"></script>
   <script src="/public/js/keyFunctions.js"></script>
   <script src="/public/js/overlay.js"></script>
+  <script src='/public/js/THREEx.WindowResize.js'></script>
+  <script src='/public/js/typing.js'></script>
 
 </head>
 <body>
@@ -159,11 +169,11 @@
     <div>
        <h2>Welcome to <br><u><strong class="title">Copernican Perception</strong></u></h2>
        <span onclick='copper()' class="start typed-cursor">Press Start</span>
-       
+       <br>
+       <span onclick='overlay()' class="skip">Skip Tutorial</span>
     </div>
   </div>
 
-  
   <div id="Stats-output"></div>
   <div id="output">
     <h2 id="message">Star Information</h2>
@@ -200,7 +210,7 @@
       clock = new THREE.Clock();
       scene = new THREE.Scene();
       renderer =  new THREE.WebGLRenderer();
-      renderer.setSize( window.innerWidth, window.innerHeight );
+      // renderer.setSize( window.innerWidth, window.innerHeight );
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
@@ -232,6 +242,7 @@
       getConstellations();
       getConStars()
       render();
+      THREEx.WindowResize(renderer, camera);
     });
   </script> 
 </body>
