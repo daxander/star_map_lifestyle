@@ -130,20 +130,20 @@
       projector, mouse = { x: 0, y: 0 };
       camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 1000000);
              
-       targetList = [];
-       clock = new THREE.Clock();
-       scene = new THREE.Scene();
-       renderer = new THREE.WebGLRenderer();
-       renderer.setSize( window.innerWidth, window.innerHeight );
-       renderer.setSize( window.innerWidth, window.innerHeight );
-       document.body.appendChild( renderer.domElement );
-
-       
+      targetList = [];
+      clock = new THREE.Clock();
+      scene = new THREE.Scene();
+      renderer = new THREE.WebGLRenderer();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      document.body.appendChild( renderer.domElement );
 
 
-       // add subtle ambient lighting
-       var ambientLight = new THREE.AmbientLight(0x0c0c0c);
-       scene.add(ambientLight);
+
+
+      // add subtle ambient lighting
+      var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+      scene.add(ambientLight);
 
       // // fly controls
       // // position and point the camera to the center of the scene
@@ -157,11 +157,6 @@
       camera.rotation.x = 1.4841549021589044;
       camera.rotation.y = 0.0007258048336244705;
       camera.rotation.z = -0.008296085198361001;
-
-      
-
-
-
 
       camera.setLens(50);
 
@@ -181,13 +176,11 @@
 
 
 
-      ajax(); 
+      // ajax(); 
 
       // getConstellations();
       // getConStars();
       getPlanets();
-     
-
       planetRender();
 
     });

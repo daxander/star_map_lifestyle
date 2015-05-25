@@ -12,6 +12,5 @@ function planetRender() {
   requestAnimationFrame( planetRender );
   camControls.update(delta);
   animate();
-
   renderer.render( scene, camera );
 }
