@@ -48,6 +48,9 @@ function getPlanets(){
     var material2 = new THREE.MeshBasicMaterial( );
     material2.map  = THREE.ImageUtils.loadTexture('public/mercury.jpg');
     var mercury = new THREE.Mesh( geometry2, material2 );
+    mercury.planetName = "Mercury";
+    mercury.planetDiameter = "4,800 km";
+    mercury.distance = "57,910,000 km";
 
     var radius   = 6,
 
@@ -69,6 +72,9 @@ function getPlanets(){
     var material3 = new THREE.MeshBasicMaterial( );
     material3.map  = THREE.ImageUtils.loadTexture('public/venus.jpg');
     var venus = new THREE.Mesh( geometry3, material3 );
+    venus.planetName = "Venus";
+    venus.planetDiameter = "12,100 km";
+    venus.distance = "108,200,000 km";
 
     var radius   = 10.5,
 
@@ -90,6 +96,10 @@ function getPlanets(){
     var material4 = new THREE.MeshBasicMaterial( );
     material4.map  = THREE.ImageUtils.loadTexture('public/earth.jpg');
     var earth = new THREE.Mesh( geometry4, material4 );
+    earth.planetName = "Earth";
+    earth.planetDiameter = "12,750 km";
+    earth.distance = "149,600,000 km";
+
 
     var radius   = 15,
 
@@ -111,6 +121,9 @@ function getPlanets(){
     var material5 = new THREE.MeshBasicMaterial( );
     material5.map  = THREE.ImageUtils.loadTexture('public/mars.jpg');
     var mars = new THREE.Mesh( geometry5, material5 );
+    mars.planetName = "Mars";
+    mars.planetDiameter = "6,800 km";
+    mars.distance = "227,940,000 km";
 
     var radius   = 22.5,
 
@@ -132,6 +145,9 @@ function getPlanets(){
     var material6 = new THREE.MeshBasicMaterial( );
     material6.map  = THREE.ImageUtils.loadTexture('public/jupiter.jpg');
     var jupiter = new THREE.Mesh( geometry6, material6 );
+    jupiter.planetName = "Jupiter";
+    jupiter.planetDiameter = "142,800 km";
+    jupiter.distance = "778,330,000 km";
 
     var radius   = 77.5,
 
@@ -153,6 +169,9 @@ function getPlanets(){
     var material7 = new THREE.MeshBasicMaterial( );
     material7.map  = THREE.ImageUtils.loadTexture('public/saturn.jpg');
     var saturn = new THREE.Mesh( geometry7, material7 );
+    saturn.planetName = "Saturn";
+    saturn.planetDiameter = "120,660 km";
+    saturn.distance = "1,424,600,000 km";
 
     var radius   = 142,
 
@@ -207,6 +226,9 @@ function getPlanets(){
     var material8 = new THREE.MeshBasicMaterial( );
     material8.map  = THREE.ImageUtils.loadTexture('public/uranus.jpg');
     var uranus = new THREE.Mesh( geometry8, material8 );
+    uranus.planetName = "Uranus";
+    uranus.planetDiameter = "51,800 km";
+    uranus.distance = "2,873,550,000 km";
 
     var radius   = 262,
     segments = 200,
@@ -226,6 +248,9 @@ function getPlanets(){
     material9.map  = THREE.ImageUtils.loadTexture('public/neptune.jpg');
 
     var neptune = new THREE.Mesh( geometry9, material9 );
+    neptune.planetName = "Neptune";
+    neptune.planetDiameter = "49,500 km";
+    neptune.distance = "4,501,000,000 km";
 
 
     var radius   = 450,
@@ -247,6 +272,9 @@ function getPlanets(){
     var material10 = new THREE.MeshBasicMaterial( );
     material10.map  = THREE.ImageUtils.loadTexture('public/pluto.jpg');
     var pluto = new THREE.Mesh( geometry10, material10 );
+    pluto.planetName = "Pluto";
+    pluto.planetDiameter = "3,300 km";
+    pluto.distance = "5,945,900,000 km";
 
     var radius   = 650,
 
