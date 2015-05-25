@@ -182,6 +182,8 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
 			case 80: /*P*/ window.location.href = "/"; break;
 			case 79: /*O*/ window.location.href = "/solar_system"; break;
+
+			case 48: /*0*/ toggleOrbit(); break;
 		}
 
 	};

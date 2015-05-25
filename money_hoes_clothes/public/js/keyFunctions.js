@@ -64,41 +64,20 @@ function nameConstellation(id){
   }
 }
 
+var orbitOn = true;
 
+function toggleOrbit() { 
+console.log('0 clicked');  
 
-// function toggleViews() {
-//   console.log(solarSystem);
-//   if (solarSystem) {
-//     console.log('stars');
-//     window.location.href = "/";
-    
-//   } else {
-//     console.log('planets');
-//     window.location.href = "/solar_system";
-    
-//   } 
-// }
-
-// var solarSystem = false;
-// function toggleViews() {
-//   console.log(solarSystem);
-//   if (solarSystem) {
-//     $.get('/', function() {
-//       redirect '/';
-//     });    
-//   } else {
-//     $.get('/solar_system', function() {
-//       redirect '/solar_system';
-//     });
-//   } 
-//   solarSystem = !solarSystem;
-// }
-
-
-
-
-
-
-
-
-
+ if (orbitOn) {
+   for (i=0; i<orbits.length; i++) {
+      scene.remove(orbits[i]);
+    }
+   orbitOn = false;
+ } else {
+   for (i=0; i<orbits.length; i++) {
+      scene.add(orbits[i]);
+    }
+   orbitOn = true;
+ }
+}

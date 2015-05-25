@@ -57,6 +57,7 @@ function getPlanets(){
 
     }
 
+    orbits = [];
     function makeOrbit(radius) {
         segments = 200,
         material = new THREE.LineBasicMaterial( { color: 0xFFFFFF } ),
@@ -68,6 +69,7 @@ function getPlanets(){
 
 
         scene.add( orbit );
+        orbits.push( orbit );
     }
   
 
@@ -76,6 +78,7 @@ function getPlanets(){
         makeSphere( 0,0,0, 5.1, 0.6, sunTexture, sunRotationy );
 
     }
+
 
     function makeMercury(){
         makeSphere( 6,0,0, .5, 1.0, mercuryTexture, earthRotationy);
