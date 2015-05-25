@@ -11,8 +11,6 @@ function ajax(){
   });
 }
 
-
-
 function getConstellations(){
   console.log("Sending request to server...")
   console.log(window.constellations);
@@ -27,7 +25,6 @@ function getConstellations(){
     }
   });
 }
-
 
 function getConStars(){
   console.log("Sending request to server...")

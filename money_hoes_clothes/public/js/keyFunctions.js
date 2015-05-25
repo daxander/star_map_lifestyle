@@ -30,10 +30,7 @@ function speed(number){
 
 function findLocation() {
   var location = Math.sqrt((camera.position.x*camera.position.x)+(camera.position.y*camera.position.y)+(camera.position.z*camera.position.z)) * 3.257;
-  var locationDiv = document.createElement('div');
-  locationDiv.innerHTML = '<h2>Current distance from sun is:</h2>' + location + ' <p><strong>light years</strong></p>';
-  // document.getElementById('distance2').innerHTML = '';
-  // document.getElementById('distance2').appendChild(locationDiv);
+   $("#distance2").html('<h3>Current distance from sun is:</h3>' + location + ' <p><strong>light years</strong></p>');
 }
 
 function nameConstellation(id){
@@ -63,41 +60,6 @@ function nameConstellation(id){
     default: return "part of an unmapped constellation"; break;
   }
 }
-
-
-
-// function toggleViews() {
-//   console.log(solarSystem);
-//   if (solarSystem) {
-//     console.log('stars');
-//     window.location.href = "/";
-    
-//   } else {
-//     console.log('planets');
-//     window.location.href = "/solar_system";
-    
-//   } 
-// }
-
-// var solarSystem = false;
-// function toggleViews() {
-//   console.log(solarSystem);
-//   if (solarSystem) {
-//     $.get('/', function() {
-//       redirect '/';
-//     });    
-//   } else {
-//     $.get('/solar_system', function() {
-//       redirect '/solar_system';
-//     });
-//   } 
-//   solarSystem = !solarSystem;
-// }
-
-
-
-
-
 
 
 
