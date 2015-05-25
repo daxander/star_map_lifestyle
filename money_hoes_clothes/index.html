@@ -7,7 +7,7 @@
     p { margin: 2px; font-size: 1.1em;}
     h2 { margin-bottom: 10px; margin-top: 5px; }
     #Stats-output { position: fixed; top: 0px; }
-    .title { margin-top: 10px; font-size: 3em; margin-top: 10px;}
+    .title { margin-top: 10px; font-size: 2em; margin-top: 10px;}
     body {
       cursor: crosshair;
         height:100%;
@@ -95,7 +95,9 @@
       text-align: center;
       font-family: 'Orbitron', sans-serif;
       color: #54BED8;
-      border: 2px solid #54BED8; 
+      border: 2px solid #54BED8;
+      font-size: 2em; 
+      letter-spacing: 2px;
     }
 
     a {
@@ -110,7 +112,28 @@
    .start:hover {
     cursor: pointer;
    }
-
+   /* typed cursor */
+   .typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 2s infinite;
+  }
+  @keyframes blink{
+      0% { opacity:3; }
+      50% { opacity:0; }
+      100% { opacity:3; }
+  }
+  @-webkit-keyframes blink{
+      0% { opacity:3; }
+      50% { opacity:0; }
+      100% { opacity:3; }
+  }
+  @-moz-keyframes blink{
+      0% { opacity:3; }
+      50% { opacity:0; }
+      100% { opacity:3; }
+  }
   </style>
 
   <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500,700,900' rel='stylesheet' type='text/css'>
@@ -130,12 +153,16 @@
 
 </head>
 <body>
+
+</script>
   <div id="overlay">
     <div>
-       <h2>Welcome to <br><strong class="title">Copernican Perception</strong></h2>
-       <span onclick='overlay()' class="start">Start</span>
+       <h2>Welcome to <br><u><strong class="title">Copernican Perception</strong></u></h2>
+       <span onclick='copper()' class="start typed-cursor">Press Start</span>
+       
     </div>
   </div>
+
   
   <div id="Stats-output"></div>
   <div id="output">
@@ -200,7 +227,6 @@
       camControls.verticalMax = 200.0;
       camControls.lon = -150000000;
       camControls.lat = 120000000;
- 
 
       ajax(); 
       getConstellations();
