@@ -10,9 +10,8 @@ function render() {
 
 function planetRender() {
   var delta = clock.getDelta();
-  requestAnimationFrame( render );
+  requestAnimationFrame( planetRender );
   camControls.update(delta);
-  findLocation();
   animate();
 
   renderer.render( scene, camera );
