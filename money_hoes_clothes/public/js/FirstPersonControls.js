@@ -113,7 +113,7 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		   	$('#BV').text("BV Color value: " + intersects[0].object.color_index);
 		   	if(intersects[0].object.constellation != undefined){
 		   		$('#constellation').html("Constellation: " + nameConstellation(intersects[0].object.constellation));
-		   	}else {
+		   	} else {
 					$('#constellation').text("");
 		   	}
 		  }
