@@ -21,7 +21,11 @@ function toggleConstellations() {
 
 
 function speed(number){
-  camControls.movementSpeed = number;
+  if(window.location.href === "/"){
+    camControls.movementSpeed = number;
+  }else{
+    camControls.movementSpeed = number * 5;
+  }
 }
 
 function findLocation() {
@@ -44,22 +48,19 @@ function nameConstellation(id){
     case 47: return "<a href='http://en.wikipedia.org/wiki/Crux' target='_blank'>Crux (Southern Cross)</a>"; break;
     case 48: return "<a href='http://en.wikipedia.org/wiki/Crux' target='_blank'>Crux (Southern Cross)</a>"; break;
 
- 
+    case 95: return "<a href='http://en.wikipedia.org/wiki/Orion_%28constellation%29' target='_blank'>Orion (body)</a>"; break;
+    case 96: return "<a href='http://en.wikipedia.org/wiki/Orion_%28constellation%29' target='_blank'>Orion (belt)</a>"; break;
+    case 97: return "<a href='http://en.wikipedia.org/wiki/Orion_%28constellation%29' target='_blank'>Orion (arm)</a>"; break;
+    case 98: return "<a href='http://en.wikipedia.org/wiki/Orion_%28constellation%29' target='_blank'>Orion (shield)</a>"; break;
 
-
-    case 95: return "Orion (body)"; break;
-    case 96: return "Orion (belt)"; break;
-    case 97: return "Orion (arm)"; break;
-    case 98: return "Orion (shield)"; break;
-
-    case 133: return "Ursa Major (Big Dipper)"; break;
-    case 138: return "Ursa Minor (Little Dipper)"; break;
+    case 133: return "<a href='http://en.wikipedia.org/wiki/Ursa_Major' target='_blank'>Ursa Major (Big Dipper)</a>"; break;
+    case 138: return "http://en.wikipedia.org/wiki/Ursa_Minor' target='_blank'>Ursa Minor (Little Dipper)</a>"; break;
     case 122: return "<a href='http://en.wikipedia.org/wiki/Sculptor_%28constellation%29' target='_blank'>Sculptor</a>"; break;
     
     case 133: return "<a href='http://en.wikipedia.org/wiki/Ursa_Major' target='_blank'>Ursa Major (Big Dipper)</a>"; break;
     case 138: return "<a href='http://en.wikipedia.org/wiki/Ursa_Major' target='_blank'>Ursa Minor (Little Dipper)</a>"; break;
   
-    default: return "unmapped constellation"; break;
+    default: return "part of an unmapped constellation"; break;
   }
 }
 

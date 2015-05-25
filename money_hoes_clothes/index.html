@@ -133,9 +133,7 @@
   <div id="overlay">
     <div>
        <h2>Welcome to <br><strong class="title">Copernican Perception</strong></h2>
-     <!--  <p>Click here to <a href='#' onclick='overlay()'>begin</a></p> -->
-<!--       <button id="start-button" onclick='overlay()'>Start</button>
- -->     <span onclick='overlay()' class="start">Start</span>
+       <span onclick='overlay()' class="start">Start</span>
     </div>
   </div>
   
@@ -170,18 +168,18 @@
 
 
       camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 100000 );
-             
-       targetList = [];
-       clock = new THREE.Clock();
-       scene = new THREE.Scene();
-       renderer =  new THREE.WebGLRenderer();
-       renderer.setSize( window.innerWidth, window.innerHeight );
-       renderer.setSize( window.innerWidth, window.innerHeight );
-       document.body.appendChild( renderer.domElement );
+           
+      targetList = [];
+      clock = new THREE.Clock();
+      scene = new THREE.Scene();
+      renderer =  new THREE.WebGLRenderer();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      document.body.appendChild( renderer.domElement );
 
-       // add subtle ambient lighting
-       var ambientLight = new THREE.AmbientLight(0x0c0c0c);
-       scene.add(ambientLight);
+      // add subtle ambient lighting
+      var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+      scene.add(ambientLight);
 
 
       // // fly controls
@@ -202,8 +200,7 @@
       camControls.verticalMax = 200.0;
       camControls.lon = -150000000;
       camControls.lat = 120000000;
-
-      
+ 
 
       ajax(); 
       getConstellations();

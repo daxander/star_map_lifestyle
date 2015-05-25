@@ -4,10 +4,5 @@ function render() {
   camControls.update(delta);
   findLocation();
   animate();
-
-
-
-
-
   renderer.render( scene, camera );
 }
