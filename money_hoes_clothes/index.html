@@ -7,7 +7,7 @@
     p { margin: 2px; font-size: 1.1em;}
     h2 { margin-bottom: 10px; margin-top: 5px; }
     #Stats-output { position: fixed; top: 0px; }
-    .title { margin-top: 10px; font-size: 3em; margin-top: 10px;}
+    .title { margin-top: 10px; font-size: 2em; margin-top: 10px;}
     body {
       cursor: crosshair;
         height:100%;
@@ -86,6 +86,7 @@
       height:100%;
       text-align:center;
       z-index: 1000;
+      line-height: 1.2;
     }
 
     #overlay div {
@@ -95,7 +96,9 @@
       text-align: center;
       font-family: 'Orbitron', sans-serif;
       color: #54BED8;
-      border: 2px solid #54BED8; 
+      border: 2px solid #54BED8;
+      font-size: 2em; 
+      letter-spacing: 2px;
     }
 
     a {
@@ -107,9 +110,38 @@
       font-size: 1.8em;
    }
 
+   .skip {
+    font-size: .5em;
+   }
+   .skip:hover {
+    cursor: pointer;
+   }
+
    .start:hover {
     cursor: pointer;
    }
+   /* typed cursor */
+   .typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 2s infinite;
+  }
+  @keyframes blink{
+      0% { opacity:3; }
+      50% { opacity:0; }
+      100% { opacity:3; }
+  }
+  @-webkit-keyframes blink{
+      0% { opacity:3; }
+      50% { opacity:0; }
+      100% { opacity:3; }
+  }
+  @-moz-keyframes blink{
+      0% { opacity:3; }
+      50% { opacity:0; }
+      100% { opacity:3; }
+  }
 
   </style>
 
@@ -127,16 +159,22 @@
   <script src="/public/js/axisBuilder.js"></script>
   <script src="/public/js/keyFunctions.js"></script>
   <script src="/public/js/overlay.js"></script>
+  <script src='/public/js/THREEx.WindowResize.js'></script>
+  <script src='/public/js/typing.js'></script>
 
 </head>
 <body>
+
+</script>
   <div id="overlay">
     <div>
-       <h2>Welcome to <br><strong class="title">Copernican Perception</strong></h2>
-       <span onclick='overlay()' class="start">Start</span>
+       <h2>Welcome to <br><u><strong class="title">Copernican Perception</strong></u></h2>
+       <span onclick='copper()' class="start typed-cursor">Start</span>
+       <br>
+       <span onclick='overlay()' class="skip">Skip Intro</span>
     </div>
   </div>
-  
+
   <div id="Stats-output"></div>
   <div id="output">
     <h2 id="message">Star Information</h2>
@@ -173,7 +211,7 @@
       clock = new THREE.Clock();
       scene = new THREE.Scene();
       renderer =  new THREE.WebGLRenderer();
-      renderer.setSize( window.innerWidth, window.innerHeight );
+      // renderer.setSize( window.innerWidth, window.innerHeight );
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
@@ -200,12 +238,12 @@
       camControls.verticalMax = 200.0;
       camControls.lon = -150000000;
       camControls.lat = 120000000;
- 
 
       ajax(); 
       getConstellations();
       getConStars()
       render();
+      THREEx.WindowResize(renderer, camera);
     });
   </script> 
 </body>

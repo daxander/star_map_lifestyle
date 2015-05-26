@@ -21,10 +21,11 @@ function toggleConstellations() {
 
 
 function speed(number){
-  if(window.location.href === "/"){
+  console.log(window.location.href);
+  if(window.location.href === "http://localhost:3000/"){
     camControls.movementSpeed = number;
   }else{
-    camControls.movementSpeed = number * 5;
+    camControls.movementSpeed = number * 6;
   }
 }
 
