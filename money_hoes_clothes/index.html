@@ -86,6 +86,7 @@
       height:100%;
       text-align:center;
       z-index: 1000;
+      line-height: 1.2;
     }
 
     #overlay div {
@@ -98,6 +99,13 @@
       border: 2px solid #54BED8;
       font-size: 2em; 
       letter-spacing: 2px;
+    }
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 1px solid #54BED8;
     }
 
     a {
@@ -167,10 +175,11 @@
 </script>
   <div id="overlay">
     <div>
+      <span onclick='overlay()' class="close">X</span>
        <h2>Welcome to <br><u><strong class="title">Copernican Perception</strong></u></h2>
-       <span onclick='copper()' class="start typed-cursor">Press Start</span>
+       <span onclick='copper()' class="start typed-cursor">Start</span>
        <br>
-       <span onclick='overlay()' class="skip">Skip Tutorial</span>
+       <span onclick='overlay()' class="skip">Skip Intro</span>
     </div>
   </div>
 
