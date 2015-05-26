@@ -105,18 +105,25 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 		  var intersects = ray.intersectObjects( targetList );
 
 		  if ( intersects.length > 0 ){
-		    ///do something here on click 
-		    console.log('target found');
-		    $('#message').text("Name: " + intersects[0].object.name);
-		   	$('#content').text("Lightyears from the Sun: " + intersects[0].object.distance);
-		   	$('#luminosity').text("Luminosity: " + intersects[0].object.luminosity);
-		   	$('#BV').text("BV Color value: " + intersects[0].object.color_index);
-		   	if(intersects[0].object.constellation != undefined){
-		   		$('#constellation').html("Constellation: " + nameConstellation(intersects[0].object.constellation));
-		   	} else {
-					$('#constellation').text("");
-		   	}
-		  }
+		  	if (intersects[0].object.planet){
+		  		console.log('planet clicked');
+		  		$('#message').text("Name: " + intersects[0].object.name);
+		  		$('#content').text("Distance from the Sun: " + intersects[0].object.distance);
+		  		$('#luminosity').text("Diameter: " + intersects[0].object.diameter);
+		  	} else {
+			    ///do something here on click 
+			    console.log('target found');
+			    $('#message').text("Name: " + intersects[0].object.name);
+			    $('#content').text("Lightyears from the Sun: " + intersects[0].object.distance);
+			    $('#luminosity').text("Luminosity: " + intersects[0].object.luminosity);
+			    $('#BV').text("BV Color value: " + intersects[0].object.color_index)
+			    if(intersects[0].object.constellation != undefined){
+			    	$('#constellation').html("Constellation: " + nameConstellation(intersects[0].object.constellation));
+			    } else {
+			    	$('#constellation').text("");
+			    }
+			  }
+			}
 		}
 	};
 
