@@ -6,7 +6,7 @@
               typeSpeed: 8
           });
       });
-    setTimeout(function(){ overlay(); }, 75000);      
+    setTimeout(function(){ overlay(); }, 70000);      
 }
 // $(function(){
 //     var hitStart = {
